@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>images\hpLine.png</Source>
+      <Name>images\uiHealth</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\uiHealth.xnb</Output>
+      <Time>2023-06-09T13:10:24.0816367+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\MissionText.png</Source>
+      <Name>images\missionTextUI</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\missionTextUI.xnb</Output>
+      <Time>2023-06-09T13:10:24.0972625+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\playerHUD.png</Source>
+      <Name>images\playerHUD</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\playerHUD.xnb</Output>
+      <Time>2023-06-09T13:10:24.0972625+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\uiAim.png</Source>
+      <Name>images\uiAim</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\uiAim.xnb</Output>
+      <Time>2023-06-09T13:10:24.0972625+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\Codyp.png</Source>
+      <Name>images\codyGamePlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\codyGamePlay.xnb</Output>
+      <Time>2023-06-09T13:59:48.4061188+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\PistolShoot.png</Source>
+      <Name>images\PistolShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\PistolShoot.xnb</Output>
+      <Time>2023-06-09T16:14:03.1059044+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\MenuBackGround.png</Source>
+      <Name>images\menuBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\menuBG.xnb</Output>
+      <Time>2023-06-09T16:23:31.9119218+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\CodyMenu.png</Source>
+      <Name>images\codyMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\codyMenu.xnb</Output>
+      <Time>2023-06-10T18:08:56.8075441+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\1x1.bmp</Source>
+      <Name>images\1x1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\1x1.xnb</Output>
+      <Time>2023-06-10T20:58:25.8760351+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\enemy.png</Source>
+      <Name>images\enemy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\enemy.xnb</Output>
+      <Time>2023-06-11T11:45:27.1343914+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\ShadingEffect.png</Source>
+      <Name>images\fade</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\fade.xnb</Output>
+      <Time>2023-06-11T16:25:28.187977+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\AssaultRifleShoot.png</Source>
+      <Name>images\AssaultRifleShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\AssaultRifleShoot.xnb</Output>
+      <Time>2023-06-12T15:45:16.17402+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\Explosion.png</Source>
+      <Name>images\explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\explosion.xnb</Output>
+      <Time>2023-06-12T19:03:10.0625067+07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\ToonAround.spritefont</Source>
+      <Name>fonts\hudFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\fonts\hudFont.xnb</Output>
+      <Time>2023-06-11T17:04:21.5254299+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\magnum-1.mp3</Source>
+      <Name>sounds\magnumShot</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumShot.xnb</Output>
+      <Time>2023-06-10T12:18:22.1500912+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\AssaulRifleOutOfAmmo.wav</Source>
+      <Name>sounds\assaultRifleNoAmmo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\assaultRifleNoAmmo.xnb</Output>
+      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\AssaultRifleA.wav</Source>
+      <Name>sounds\assaultRifleShotA</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\assaultRifleShotA.xnb</Output>
+      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\AssaultRifleB.wav</Source>
+      <Name>sounds\assaultRifleShotB</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\assaultRifleShotB.xnb</Output>
+      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\PistolOutOfAmmo.wav</Source>
+      <Name>sounds\magnumNoAmmo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumNoAmmo.xnb</Output>
+      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\halo killsoundA.wav</Source>
+      <Name>sounds\killsoundA</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\killsoundA.xnb</Output>
+      <Time>2023-06-11T22:23:37.1107103+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\halo killsoundB.wav</Source>
+      <Name>sounds\killsoundB</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\killsoundB.xnb</Output>
+      <Time>2023-06-11T22:26:52.1152497+07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\VCROSD.spritefont</Source>
+      <Name>fonts\vcr</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\fonts\vcr.xnb</Output>
+      <Time>2023-06-17T10:53:31.3640775+07:00</Time>
+    </Item>
+    <Item>
+      <Source>shaders\invert.fx</Source>
+      <Name>shaders\invert</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\shaders\invert.xnb</Output>
+      <Time>2023-06-17T13:16:36.4327345+07:00</Time>
+    </Item>
+    <Item>
+      <Source>shaders\Monochrome.fx</Source>
+      <Name>shaders\monochrome</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\shaders\monochrome.xnb</Output>
+      <Time>2023-06-17T13:19:57.6252398+07:00</Time>
+    </Item>
+    <Item>
+      <Source>shaders\DirBlur x3.fx</Source>
+      <Name>shaders\blur</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\shaders\blur.xnb</Output>
+      <Time>2023-06-17T14:24:21.8992694+07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID Null="true" />
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Prototype</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1Content\obj\x86\Prototype\</IntermediateDirectory>
+      <OutputDirectory>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2023-06-05T18:25:59.2517123+07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
