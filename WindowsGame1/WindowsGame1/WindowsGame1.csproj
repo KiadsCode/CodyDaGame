@@ -147,7 +147,7 @@
     <Compile Include="SpriteSheets\SpriteSheet.cs" />
     <Compile Include="SpriteSheets\SpriteSheetContentProcessor.cs" />
     <Compile Include="SpriteSheets\SpriteSheetImporter.cs" />
-    <Compile Include="Engine\Camera2D.cs" />
+    <Compile Include="Engine\Camera.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="Weapons\AssaultRifle.cs" />
     <Compile Include="Weapons\Magnum.cs" />
