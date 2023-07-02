@@ -11,16 +11,16 @@ namespace WindowsGame1.Weapons
 
         public override void Initialize()
         {
-            AmmoCount = 15;
-            Damage = 20;
-            ShootingCoolDown = 20;
-            Automatical = false;
-
-            WeaponAssetName = "pistolShot";
-            WeaponSpriteSheetName = "pistolShot";
-
-            WeaponOffset=new Weapons.WeaponOffset(new Vector2(130, 35), new Vector2(20, -35));
-            ShootingPointOffset = new Weapons.WeaponOffset(new Vector2(20, -35), new Vector2(16, -35));
+            InitWeapon(
+                15,
+                20,
+                20,
+                false,
+                "pistolShot",
+                "pistolShot",
+                new WeaponOffset(new Vector2(130, 35), new Vector2(20, -35)),
+                new WeaponOffset(new Vector2(20, -35), new Vector2(16, -35))
+                );
             base.Initialize();
         }
 

@@ -116,6 +116,20 @@ namespace WindowsGame1.Weapons
             _oldMouseState = mouseState;
         }
 
+        protected void InitWeapon(int ammoCount, ushort damage, int shootingCoolDown, bool automatical, string weaponAssetName, string weaponSpriteSheetName, WeaponOffset weaponOffset, WeaponOffset shootingPointOffset)
+        {
+            AmmoCount = ammoCount;
+            Damage = damage;
+            ShootingCoolDown = shootingCoolDown;
+            Automatical = automatical;
+
+            WeaponAssetName = weaponAssetName;
+            WeaponSpriteSheetName = weaponSpriteSheetName;
+
+            WeaponOffset = weaponOffset;
+            ShootingPointOffset = shootingPointOffset;
+        }
+
         private void TryShoot(MouseState mouseState)
         {
             _ableToShoot = _shootingCoolDown == 0;
