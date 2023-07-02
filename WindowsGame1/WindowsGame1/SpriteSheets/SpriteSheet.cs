@@ -5,7 +5,7 @@ namespace SparrowV2
 {
     public struct SpriteSheet
     {
-        private Dictionary<int, Rectangle> _animation;
+        private Dictionary<string, Rectangle> _animation;
         private string _name;
 
         public int FramesCount
@@ -18,7 +18,13 @@ namespace SparrowV2
 
         public bool ContainsFrame(int frameID)
         {
-            return _animation.ContainsKey(frameID);
+            Rectangle[] animationRectangles = new Rectangle[_animation.Values.Count];
+            _animation.Values.CopyTo(animationRectangles, 0);
+            return animationRectangles[frameID] != null;
+        }
+        public bool ContainsFrame(string frameName)
+        {
+            return _animation.ContainsKey(frameName);
         }
 
         public string Name
@@ -29,7 +35,7 @@ namespace SparrowV2
             }
         }
 
-        public SpriteSheet(Dictionary<int, Rectangle> animation, string name)
+        public SpriteSheet(Dictionary<string, Rectangle> animation, string name)
         {
             _animation = animation;
             _name = name;
@@ -39,9 +45,22 @@ namespace SparrowV2
         {
             get
             {
-                if (_animation.ContainsKey(frameID))
-                    return _animation[frameID];
-                return new Rectangle(0, 0, 0, 0);
+                Rectangle[] animationRectangles = new Rectangle[_animation.Values.Count];
+                _animation.Values.CopyTo(animationRectangles, 0);
+
+                if (ContainsFrame(frameID))
+                    return animationRectangles[frameID];
+                return Rectangle.Empty;
+            }
+        }
+
+        public Rectangle this[string frameName]
+        {
+            get
+            {
+                if (ContainsFrame(frameName))
+                    return _animation[frameName];
+                return Rectangle.Empty;
             }
         }
     }

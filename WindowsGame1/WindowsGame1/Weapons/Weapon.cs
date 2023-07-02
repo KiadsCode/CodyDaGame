@@ -6,54 +6,68 @@ namespace WindowsGame1.Weapons
 {
     public class Weapon
     {
+        private int _frame = 0;
+        private int _ammo = 0;
         private int _animationCoolDown = 2;
         private int _shootingCoolDown = 3;
+        private int _resetShootingCoolDown = 3;
+        private ushort _damage = 0;
+        private bool _ableToShoot = false;
         private SpriteEffects _spriteEffects = SpriteEffects.None;
         private Rectangle _bulletRectStart = Rectangle.Empty;
         private MouseState _oldMouseState = Mouse.GetState();
+        private Player _player = default(Player);
+        private bool _automatical = false;
 
-        protected string weaponAssetName = string.Empty;
-        protected string weaponSpriteSheetName = string.Empty;
-        protected int frame = 0;
-        protected int shootingCoolDown = 3;
-        protected int ammo = 0;
-        protected bool automatical = false;
-        protected bool ableToShoot = false;
-        protected Cody player = default(Cody);
-        protected Vector2 weaponOffsetRight = Vector2.Zero;
-        protected Vector2 weaponOffsetLeft = Vector2.Zero;
-        protected Vector2 shootPointOffsetRight = Vector2.Zero;
-        protected Vector2 shootPointOffsetLeft = Vector2.Zero;
-        protected ushort damage = 0;
+        protected string WeaponAssetName = string.Empty;
+        protected string WeaponSpriteSheetName = string.Empty;
+        protected WeaponOffset WeaponOffset = new WeaponOffset(Vector2.Zero);
+        protected WeaponOffset ShootingPointOffset = new WeaponOffset(Vector2.Zero);
 
         internal Game Game = null;
 
+        public bool Automatical
+        {
+            get
+            {
+                return _automatical;
+            }
+            protected set
+            {
+                _automatical = value;
+            }
+        }
         public ushort Damage
         {
             get
             {
-                return damage;
+                return _damage;
+            }
+            protected set
+            {
+                _damage = value;
             }
         }
         public int ShootingCoolDown
         {
             get
             {
-                return shootingCoolDown;
+                return _resetShootingCoolDown;
             }
-        }
-        public bool IsAbleToShoot
-        {
-            get
+            protected set
             {
-                return ableToShoot;
+                _resetShootingCoolDown = value;
             }
         }
         public int AmmoCount
         {
             get
             {
-                return ammo;
+                return _ammo;
+            }
+            protected set
+            {
+                _ammo = value;
             }
         }
 
@@ -72,13 +86,13 @@ namespace WindowsGame1.Weapons
 
         public void ResetAnimation()
         { 
-            frame = Game1.SpriteSheets[weaponSpriteSheetName].FramesCount - 2; 
+            _frame = Game1.SpriteSheets[WeaponSpriteSheetName].FramesCount - 1; 
         }
 
-        public virtual void Update(Cody cody, GameTime gameTime)
+        public virtual void Update(Player player, GameTime gameTime)
         {
             // TODO: Add your update code here
-            this.player = cody;
+            _player = player;
             MouseState mouseState = Mouse.GetState();
             if (_shootingCoolDown > 0)
                 _shootingCoolDown--;
@@ -86,9 +100,9 @@ namespace WindowsGame1.Weapons
 
             _animationCoolDown--;
             if (_animationCoolDown <= 0)
-                if (frame <= Game1.SpriteSheets[weaponSpriteSheetName].FramesCount - 2)
-                    frame++;
-            switch (cody.Direction)
+                if (_frame <= Game1.SpriteSheets[WeaponSpriteSheetName].FramesCount - 2)
+                    _frame++;
+            switch (player.Direction)
             {
                 case 1:
                     _spriteEffects = SpriteEffects.None;
@@ -104,29 +118,20 @@ namespace WindowsGame1.Weapons
 
         private void TryShoot(MouseState mouseState)
         {
-            ableToShoot = _shootingCoolDown == 0;
-            if (ableToShoot)
+            _ableToShoot = _shootingCoolDown == 0;
+            if (_ableToShoot)
             {
-                if (automatical)
-                {
-                    if (mouseState.LeftButton == ButtonState.Pressed)
-                    {
-                        PreShoot();
-                    }
-                }
-                else
-                {
-                    if (mouseState.LeftButton == ButtonState.Pressed && _oldMouseState.LeftButton == ButtonState.Released)
-                    {
-                        PreShoot();
-                    }
-                }
+                bool shootRequired = false;
+                shootRequired = mouseState.LeftButton == ButtonState.Pressed && _automatical == true
+                    || mouseState.LeftButton == ButtonState.Pressed && _oldMouseState.LeftButton == ButtonState.Released && _automatical == false;
+                if (shootRequired)
+                    PreShoot();
             }
         }
 
         private void PreShoot()
         {
-            if (ammo > 0)
+            if (_ammo > 0)
             {
                 Shoot();
             }
@@ -153,14 +158,14 @@ namespace WindowsGame1.Weapons
 
         public virtual void Shoot()
         {
-            frame = 0;
-            ammo--;
+            _frame = 0;
+            _ammo--;
             ResetCoolDown();
 
             if (Game1.EnemyContainer.Count > 0)
             {
                 Rectangle bulletRect = _bulletRectStart;
-                if (player.Direction == 1)
+                if (_player.Direction == 1)
                 {
                     float rightSideBound = (Game1.GamePlayCamera.Position.X + Game.Window.ClientBounds.Width / 2);
                     for (int i = _bulletRectStart.X; i < rightSideBound; i++)
@@ -179,29 +184,29 @@ namespace WindowsGame1.Weapons
 
         public void AddAmmo(int count)
         {
-            ammo += count;
+            _ammo += count;
         }
 
         private void ResetCoolDown()
         {
-            _shootingCoolDown = shootingCoolDown;
-            ableToShoot = false;
+            _shootingCoolDown = _resetShootingCoolDown;
+            _ableToShoot = false;
         }
         public virtual void OnNoAmmo()
         {
         }
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (player.Direction == 1)
+            if (_player.Direction == 1)
             {
-                spriteBatch.Draw(Game1.Textures[weaponAssetName], player.Position + weaponOffsetRight, Game1.SpriteSheets[weaponSpriteSheetName][frame], Color.White, 0, Vector2.Zero, 1, _spriteEffects, 0);
-                _bulletRectStart = new Rectangle((int)player.Position.X + (int)shootPointOffsetRight.X + Game1.SpriteSheets[weaponSpriteSheetName][frame].Width / 2, (int)player.Position.Y + (int)shootPointOffsetRight.Y + Game1.SpriteSheets[weaponSpriteSheetName][frame].Height / 2 + 2, 5, 5);
+                spriteBatch.Draw(Game1.Textures[WeaponAssetName], _player.Position + WeaponOffset.Right, Game1.SpriteSheets[WeaponSpriteSheetName][_frame], Color.White, 0, Vector2.Zero, 1, _spriteEffects, 0);
+                _bulletRectStart = new Rectangle((int)_player.Position.X + (int)ShootingPointOffset.Right.X + Game1.SpriteSheets[WeaponSpriteSheetName][_frame].Width / 2, (int)_player.Position.Y + (int)ShootingPointOffset.Right.Y + Game1.SpriteSheets[WeaponSpriteSheetName][_frame].Height / 2 + 2, 5, 5);
                 DrawShootingPoint(spriteBatch);
             }
             else
             {
-                spriteBatch.Draw(Game1.Textures[weaponAssetName], player.Position - weaponOffsetLeft, Game1.SpriteSheets[weaponSpriteSheetName][frame], Color.White, 0, Vector2.Zero, 1, _spriteEffects, 0);
-                _bulletRectStart = new Rectangle((int)player.Position.X - (int)shootPointOffsetLeft.X - Game1.SpriteSheets[weaponSpriteSheetName][frame].Width / 2, (int)player.Position.Y + (int)shootPointOffsetLeft.Y + Game1.SpriteSheets[weaponSpriteSheetName][frame].Height / 2 + 2, 5, 5);
+                spriteBatch.Draw(Game1.Textures[WeaponAssetName], _player.Position - WeaponOffset.Left, Game1.SpriteSheets[WeaponSpriteSheetName][_frame], Color.White, 0, Vector2.Zero, 1, _spriteEffects, 0);
+                _bulletRectStart = new Rectangle((int)_player.Position.X - (int)ShootingPointOffset.Left.X - Game1.SpriteSheets[WeaponSpriteSheetName][_frame].Width / 2, (int)_player.Position.Y + (int)ShootingPointOffset.Left.Y + Game1.SpriteSheets[WeaponSpriteSheetName][_frame].Height / 2 + 2, 5, 5);
                 DrawShootingPoint(spriteBatch);
             }
         }

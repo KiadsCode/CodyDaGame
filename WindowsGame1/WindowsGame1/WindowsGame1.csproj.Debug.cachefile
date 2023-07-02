@@ -9,11 +9,7 @@ Content\images\1x1.xnb
 Content\images\enemy.xnb
 Content\fonts\hudFont.xnb
 Content\sounds\magnumShot.xnb
-Content\sounds\magnumNoAmmo.xnb
 Content\images\AssaultRifleShoot.xnb
-Content\sounds\assaultRifleNoAmmo.xnb
-Content\sounds\assaultRifleShotA.xnb
-Content\sounds\assaultRifleShotB.xnb
 Content\sounds\killsoundA.xnb
 Content\sounds\killsoundB.xnb
 Content\images\codyGamePlay.xnb
@@ -23,6 +19,8 @@ Content\fonts\vcr.xnb
 Content\shaders\invert.xnb
 Content\shaders\monochrome.xnb
 Content\shaders\blur.xnb
+Content\sounds\weaponNoAmmo.xnb
+Content\sounds\arShotC.xnb
 Content\images\xml\Cody.xml
 Content\images\xml\PistolShoot.xml
 Content\images\xml\CodyMenu.xml

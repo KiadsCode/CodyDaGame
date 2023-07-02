@@ -152,23 +152,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sounds\AssaulRifleOutOfAmmo.wav">
-      <Name>assaultRifleNoAmmo</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="sounds\AssaultRifleA.wav">
-      <Name>assaultRifleShotA</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="sounds\AssaultRifleB.wav">
-      <Name>assaultRifleShotB</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="sounds\PistolOutOfAmmo.wav">
-      <Name>magnumNoAmmo</Name>
+    <Compile Include="sounds\WeaponNoAmmo.wav">
+      <Name>weaponNoAmmo</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
@@ -268,6 +253,13 @@
       <Name>blur</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sounds\AssShotC.wav">
+      <Name>arShotC</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

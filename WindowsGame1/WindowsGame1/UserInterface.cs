@@ -20,7 +20,12 @@ namespace WindowsGame1
             {
                 Position = new Vector2(game.Window.ClientBounds.Width / 2, game.Window.ClientBounds.Height / 2)
             };
-            _spriteBatch = new SpriteBatch(game.GraphicsDevice);
+        }
+
+        protected override void LoadContent()
+        {
+            _spriteBatch = new SpriteBatch(Game.GraphicsDevice);
+            base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
@@ -38,7 +43,7 @@ namespace WindowsGame1
             for (int i = 0; i < Game1.Player.Health; i++)
             {
                 hpColor = Color.Lerp(hpColor, new Color(255, 0, 0), 0.02f);
-                _spriteBatch.Draw(Game1.Textures["uiHealth"], new Vector2(105 + i, 405), hpColor);
+                //_spriteBatch.Draw(Game1.Textures["uiHealth"], new Vector2(105 + i, 405), hpColor);
             }
             _spriteBatch.DrawString(Game1.SpriteFonts["hudfont"], Game1.Player.GetCurrentWeapon().AmmoCount.ToString(), new Vector2(100, 425), Color.White);
 

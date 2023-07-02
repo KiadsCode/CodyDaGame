@@ -101,15 +101,6 @@
       <Time>2023-06-10T12:18:22.1500912+07:00</Time>
     </Item>
     <Item>
-      <Source>sounds\PistolOutOfAmmo.wav</Source>
-      <Name>sounds\magnumNoAmmo</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\magnumNoAmmo.xnb</Output>
-      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
-    </Item>
-    <Item>
       <Source>images\AssaultRifleShoot.png</Source>
       <Name>images\AssaultRifleShoot</Name>
       <Importer>TextureImporter</Importer>
@@ -117,33 +108,6 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\AssaultRifleShoot.xnb</Output>
       <Time>2023-06-12T15:45:16.17402+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\AssaulRifleOutOfAmmo.wav</Source>
-      <Name>sounds\assaultRifleNoAmmo</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\assaultRifleNoAmmo.xnb</Output>
-      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\AssaultRifleA.wav</Source>
-      <Name>sounds\assaultRifleShotA</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\assaultRifleShotA.xnb</Output>
-      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\AssaultRifleB.wav</Source>
-      <Name>sounds\assaultRifleShotB</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\assaultRifleShotB.xnb</Output>
-      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
     </Item>
     <Item>
       <Source>sounds\halo killsoundA.wav</Source>
@@ -225,6 +189,24 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\shaders\blur.xnb</Output>
       <Time>2023-06-17T14:24:21.8992694+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\WeaponNoAmmo.wav</Source>
+      <Name>sounds\weaponNoAmmo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\weaponNoAmmo.xnb</Output>
+      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\AssShotC.wav</Source>
+      <Name>sounds\arShotC</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\arShotC.xnb</Output>
+      <Time>2023-06-21T23:05:33.4775071+07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

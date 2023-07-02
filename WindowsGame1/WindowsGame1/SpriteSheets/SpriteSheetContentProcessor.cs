@@ -16,7 +16,7 @@ namespace SparrowV2
         {
             string[] fileNameSplited = name.Split('\\', '.');
             string[] sparrowArray = SparrowToNative(name);
-            Dictionary<int, Rectangle> outputDictionary = new Dictionary<int, Rectangle>();
+            Dictionary<string, Rectangle> outputDictionary = new Dictionary<string, Rectangle>();
 
             for (int jjasd = 0; jjasd < sparrowArray.Length - 1; jjasd++)
             {
@@ -63,7 +63,7 @@ namespace SparrowV2
                 }
 
                 parsedRectangle = new Rectangle(parsedValues[0], parsedValues[1], parsedValues[2], parsedValues[3]);
-                outputDictionary.Add(outputDictionary.Count, parsedRectangle);
+                outputDictionary.Add(parsedName, parsedRectangle);
             }
             string animationName = fileNameSplited[fileNameSplited.Length - 2];
             SpriteSheet ssfSpriteFile = new SpriteSheet(outputDictionary, animationName);

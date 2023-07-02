@@ -1,9 +1,9 @@
 namespace WindowsGame1
 {
 #if WINDOWS || XBOX
-    static class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             using (Game1 game = new Game1())
             {

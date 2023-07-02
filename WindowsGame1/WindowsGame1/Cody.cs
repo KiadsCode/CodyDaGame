@@ -6,7 +6,7 @@ using WindowsGame1.Weapons;
 
 namespace WindowsGame1
 {
-    public class Cody : DrawableGameComponent
+    public class Player : DrawableGameComponent
     {
         public const string AssetsName = "codyGamePlay";
 
@@ -54,15 +54,20 @@ namespace WindowsGame1
             return _weapons[_weaponIndex];
         }
 
-        public Cody(Game game)
+        public Player(Game game)
             : base(game)
         {
+            DrawOrder = 1;
+            _weapons = new Weapon[] { new AssaultRifle(game), new Magnum(game) };
+        }
+
+        protected override void LoadContent()
+        {
+            _spriteBatch = new SpriteBatch(Game.GraphicsDevice);
+            _weapons[_weaponIndex].ResetAnimation();
             RotateToDirection(1, SpriteEffects.FlipHorizontally);
             _frame = Game1.SpriteSheets[AssetsName].FramesCount - 3;
-            _weapons = new Weapon[] { new AssaultRifle(game), new Magnum(game) };
-            _weapons[_weaponIndex].ResetAnimation();
-            _spriteBatch = new SpriteBatch(game.GraphicsDevice);
-            DrawOrder = 1;
+            base.LoadContent();
         }
 
         public Rectangle GetCollider2D()
@@ -81,7 +86,6 @@ namespace WindowsGame1
         public override void Update(GameTime gameTime)
         {
             KeyboardState keyboard = Keyboard.GetState();
-
             if (_slided == false)
             {
                 _frame += 2;
@@ -96,14 +100,14 @@ namespace WindowsGame1
                     _position.X -= 5;
 
             RotatePlayer();
-
             if (keyboard.IsKeyDown(Keys.S))
                 _position.Y += 5;
             if (keyboard.IsKeyDown(Keys.W))
                 _position.Y -= 5;
             Game1.GamePlayCamera.Position = _position;
 
-            if (keyboard.IsKeyDown(Keys.D1) && _oldKeyboardState.IsKeyUp(Keys.D1))
+            bool switchingWeapon = keyboard.IsKeyDown(Keys.D1) && _oldKeyboardState.IsKeyUp(Keys.D1);
+            if (switchingWeapon)
                 SwitchWeapon();
 
             DebugFeatures();
