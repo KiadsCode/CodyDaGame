@@ -58,7 +58,7 @@ namespace WindowsGame1
             }
         }
 
-        public void Update(GameTime gameTime)
+        public void Update()
         {
             bool playerAfterEnemy = Game1.Player.Position.X > _position.X;
             _direction = Convert.ToInt16(!playerAfterEnemy);

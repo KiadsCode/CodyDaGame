@@ -119,6 +119,15 @@
       <Time>2023-06-12T19:03:10.0625067+07:00</Time>
     </Item>
     <Item>
+      <Source>fonts\VCROSD.spritefont</Source>
+      <Name>fonts\vcr</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\fonts\vcr.xnb</Output>
+      <Time>2023-06-17T10:53:31.3640775+07:00</Time>
+    </Item>
+    <Item>
       <Source>fonts\ToonAround.spritefont</Source>
       <Name>fonts\hudFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -135,6 +144,15 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumShot.xnb</Output>
       <Time>2023-06-10T12:18:22.1500912+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\WeaponNoAmmo.wav</Source>
+      <Name>sounds\weaponNoAmmo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\weaponNoAmmo.xnb</Output>
+      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
     </Item>
     <Item>
       <Source>sounds\halo killsoundA.wav</Source>
@@ -155,13 +173,13 @@
       <Time>2023-06-11T22:26:52.1152497+07:00</Time>
     </Item>
     <Item>
-      <Source>fonts\VCROSD.spritefont</Source>
-      <Name>fonts\vcr</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
+      <Source>sounds\AssShotC.wav</Source>
+      <Name>sounds\arShotC</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\fonts\vcr.xnb</Output>
-      <Time>2023-06-17T10:53:31.3640775+07:00</Time>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\arShotC.xnb</Output>
+      <Time>2023-06-21T23:05:33.4775071+07:00</Time>
     </Item>
     <Item>
       <Source>shaders\invert.fx</Source>
@@ -189,24 +207,6 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\shaders\blur.xnb</Output>
       <Time>2023-06-17T14:24:21.8992694+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\WeaponNoAmmo.wav</Source>
-      <Name>sounds\weaponNoAmmo</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\weaponNoAmmo.xnb</Output>
-      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\AssShotC.wav</Source>
-      <Name>sounds\arShotC</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\arShotC.xnb</Output>
-      <Time>2023-06-21T23:05:33.4775071+07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

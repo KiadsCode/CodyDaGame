@@ -12,7 +12,7 @@ namespace WindowsGame1
 
         private SpriteBatch _spriteBatch;
         private SpriteEffects _spriteEffect = SpriteEffects.None;
-        private Vector2 _position = new Vector2(100, 100);
+        private Vector2 _position = Vector2.Zero;
         private KeyboardState _oldKeyboardState = Keyboard.GetState();
         private Weapon[] _weapons;
         private int _frame = 0;

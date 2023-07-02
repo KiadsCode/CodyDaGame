@@ -18,7 +18,7 @@ namespace WindowsGame1
         public static Player Player;
         public static UserInterface UserInterface;
         public static EnemyContainer EnemyContainer;
-        public static Camera2D GamePlayCamera = new Camera2D();
+        public static Camera GamePlayCamera = new Camera();
         public const int GlobalAnimationCoolDown = 2;
 
         private GraphicsDeviceManager _graphics;
@@ -94,8 +94,6 @@ namespace WindowsGame1
             Shaders.Add("invert", Content.Load<Effect>(@"shaders\\invert"));
             Shaders.Add("blur", Content.Load<Effect>(@"shaders\\blur"));
 
-            
-
             ComponentsInitialize();
 
             for (int i = 1; i < 15; i++)
@@ -114,7 +112,7 @@ namespace WindowsGame1
             UserInterface = new UserInterface(this);
             Components.Add(UserInterface);
 
-            foreach (var item in Components)
+            foreach (IGameComponent item in Components)
                 item.Initialize();
         }
 

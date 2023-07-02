@@ -8,7 +8,7 @@ namespace WindowsGame1
     public class UserInterface : DrawableGameComponent
     {
         private SpriteBatch _spriteBatch;
-        private Camera2D _uiCamera;
+        private Camera _uiCamera;
         private MouseState _mouseState = Mouse.GetState();
 
         public UserInterface(Game game)
@@ -16,7 +16,7 @@ namespace WindowsGame1
         {
             // TODO: Construct any child components here
             DrawOrder = 2;
-            _uiCamera = new Camera2D()
+            _uiCamera = new Camera()
             {
                 Position = new Vector2(game.Window.ClientBounds.Width / 2, game.Window.ClientBounds.Height / 2)
             };
@@ -38,13 +38,8 @@ namespace WindowsGame1
         {
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, _uiCamera.GetMatrix(Game.GraphicsDevice));
 
-            Color hpColor = Color.Black;
             _spriteBatch.Draw(Game1.Textures["playerHUD"], new Vector2(10, 390), Color.White);
-            for (int i = 0; i < Game1.Player.Health; i++)
-            {
-                hpColor = Color.Lerp(hpColor, new Color(255, 0, 0), 0.02f);
-                //_spriteBatch.Draw(Game1.Textures["uiHealth"], new Vector2(105 + i, 405), hpColor);
-            }
+
             _spriteBatch.DrawString(Game1.SpriteFonts["hudfont"], Game1.Player.GetCurrentWeapon().AmmoCount.ToString(), new Vector2(100, 425), Color.White);
 
             #if DEBUG
@@ -60,6 +55,16 @@ namespace WindowsGame1
             _spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        private void DrawHealth()
+        {
+            Color hpColor = Color.Black;
+            for (int i = 0; i < Game1.Player.Health; i++)
+            {
+                hpColor = Color.Lerp(hpColor, new Color(255, 0, 0), 0.02f);
+                _spriteBatch.Draw(Game1.Textures["uiHealth"], new Vector2(105 + i, 405), hpColor);
+            }
         }
     }
 }

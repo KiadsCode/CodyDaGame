@@ -45,12 +45,18 @@ namespace WindowsGame1
             _enemies.Add(enemy);
         }
 
+        public void Add()
+        {
+            Enemy enemy = new Enemy(Vector2.Zero);
+            _enemies.Add(enemy);
+        }
+
         public override void Update(GameTime gameTime)
         {
             if (_enemies.Count > 0)
             {
                 foreach (Enemy item in _enemies)
-                    item.Update(gameTime);
+                    item.Update();
                 for (int i = 0; i < _enemies.Count; i++)
                     if (_enemies[i].Alive == false)
                         Remove(i);
@@ -62,17 +68,32 @@ namespace WindowsGame1
         {
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, Game1.GamePlayCamera.GetMatrix(Game.GraphicsDevice));
             if (_enemies.Count > 0)
-            {
-                int fov = 95;
-                foreach (Enemy item in _enemies)
-                {
-                    float enemyToCameraDistance = Vector2.Distance(item.Position, Game1.GamePlayCamera.Position);
-                    if (enemyToCameraDistance < (Game.Window.ClientBounds.Width / 2) + fov || enemyToCameraDistance < (Game.Window.ClientBounds.Height / 2) + fov)
-                        item.Draw(_spriteBatch);
-                }
-            }
+                NewEnemyRender();
             _spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        private void NewEnemyRender()
+        {
+            foreach (Enemy item in _enemies)
+            {
+                Rectangle cameraRectangle = Game1.GamePlayCamera.GetRectangle(Game);
+                Rectangle enemyRectangle = item.GetCollider();
+                if (enemyRectangle.Intersects(cameraRectangle))
+                    item.Draw(_spriteBatch);
+            }
+        }
+
+        private void OldEnemyRender()
+        {
+            int fov = 95;
+            foreach (Enemy item in _enemies)
+            {
+                float enemyToCameraDistance = Vector2.Distance(item.Position, Game1.GamePlayCamera.Position);
+                if (enemyToCameraDistance < (Game.Window.ClientBounds.Width / 2) + fov ||
+                    enemyToCameraDistance < (Game.Window.ClientBounds.Height / 2) + fov)
+                    item.Draw(_spriteBatch);
+            }
         }
     }
 }

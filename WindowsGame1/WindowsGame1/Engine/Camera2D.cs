@@ -1,9 +1,10 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace WindowsGame1.Engine
 {
-    public class Camera2D
+    public class Camera
     {
         private Matrix _transform = Matrix.Identity;
 
@@ -22,12 +23,23 @@ namespace WindowsGame1.Engine
             return _transform;
         }
 
+        public Rectangle GetRectangle(Game game)
+        {
+            Rectangle rectangle = Rectangle.Empty;
+            rectangle = new Rectangle(
+                Convert.ToInt32(Position.X) - game.Window.ClientBounds.Width / 2,
+                Convert.ToInt32(Position.Y) - game.Window.ClientBounds.Height / 2,
+                game.Window.ClientBounds.Width,
+                game.Window.ClientBounds.Height);
+            return rectangle;
+        }
+
         public void Lerp(Vector2 position, float speed)
         {
             Position = Vector2.Lerp(Position, position, speed);
         }
 
-        public Camera2D()
+        public Camera()
         {
             Zoom = 1.0f;
             Rotation = 0.0f;
