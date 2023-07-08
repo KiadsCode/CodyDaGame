@@ -116,7 +116,7 @@ namespace WindowsGame1.Weapons
             _oldMouseState = mouseState;
         }
 
-        protected void InitWeapon(int ammoCount, ushort damage, int shootingCoolDown, bool automatical, string weaponAssetName, string weaponSpriteSheetName, WeaponOffset weaponOffset, WeaponOffset shootingPointOffset)
+        protected void InitializeWeaponProperties(int ammoCount, ushort damage, int shootingCoolDown, bool automatical, string weaponAssetName, string weaponSpriteSheetName, WeaponOffset weaponOffset, WeaponOffset shootingPointOffset)
         {
             AmmoCount = ammoCount;
             Damage = damage;

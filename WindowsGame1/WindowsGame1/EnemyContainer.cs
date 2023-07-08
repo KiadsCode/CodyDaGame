@@ -68,30 +68,18 @@ namespace WindowsGame1
         {
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, Game1.GamePlayCamera.GetMatrix(Game.GraphicsDevice));
             if (_enemies.Count > 0)
-                NewEnemyRender();
+                DrawEnemies();
             _spriteBatch.End();
             base.Draw(gameTime);
         }
 
-        private void NewEnemyRender()
+        private void DrawEnemies()
         {
             foreach (Enemy item in _enemies)
             {
                 Rectangle cameraRectangle = Game1.GamePlayCamera.GetRectangle(Game);
                 Rectangle enemyRectangle = item.GetCollider();
                 if (enemyRectangle.Intersects(cameraRectangle))
-                    item.Draw(_spriteBatch);
-            }
-        }
-
-        private void OldEnemyRender()
-        {
-            int fov = 95;
-            foreach (Enemy item in _enemies)
-            {
-                float enemyToCameraDistance = Vector2.Distance(item.Position, Game1.GamePlayCamera.Position);
-                if (enemyToCameraDistance < (Game.Window.ClientBounds.Width / 2) + fov ||
-                    enemyToCameraDistance < (Game.Window.ClientBounds.Height / 2) + fov)
                     item.Draw(_spriteBatch);
             }
         }

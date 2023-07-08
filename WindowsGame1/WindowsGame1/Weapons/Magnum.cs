@@ -11,7 +11,7 @@ namespace WindowsGame1.Weapons
 
         public override void Initialize()
         {
-            InitWeapon(
+            InitializeWeaponProperties(
                 15,
                 20,
                 20,
