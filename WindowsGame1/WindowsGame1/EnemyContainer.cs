@@ -30,13 +30,33 @@ namespace WindowsGame1
         {
             DrawOrder = 0;
             _enemies = new List<Enemy>();
-            _spriteBatch = new SpriteBatch(game.GraphicsDevice);
+        }
+
+        public void SetData(Enemy[] vs)
+        {
+            _enemies = new List<Enemy>(vs);
+        }
+
+        public void SetData(List<Enemy> vs)
+        {
+            _enemies = new List<Enemy>(vs);
+        }
+
+        protected override void LoadContent()
+        {
+            _spriteBatch = new SpriteBatch(Game.GraphicsDevice);
+            base.LoadContent();
         }
 
         public void Remove(int index)
         {
             if (index < _enemies.Count)
                 _enemies.RemoveAt(index);
+        }
+
+        public void KillNiggers()
+        {
+            _enemies.Clear();
         }
 
         public void Add(Vector2 position)
@@ -53,22 +73,18 @@ namespace WindowsGame1
 
         public override void Update(GameTime gameTime)
         {
-            if (_enemies.Count > 0)
-            {
-                foreach (Enemy item in _enemies)
-                    item.Update();
-                for (int i = 0; i < _enemies.Count; i++)
-                    if (_enemies[i].Alive == false)
-                        Remove(i);
-            }
+            foreach (Enemy item in _enemies)
+                item.Update();
+            for (int i = 0; i < _enemies.Count; i++)
+                if (_enemies[i].Alive == false)
+                    Remove(i);
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, Game1.GamePlayCamera.GetMatrix(Game.GraphicsDevice));
-            if (_enemies.Count > 0)
-                DrawEnemies();
+            DrawEnemies();
             _spriteBatch.End();
             base.Draw(gameTime);
         }

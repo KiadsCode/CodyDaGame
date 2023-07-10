@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 
 namespace WindowsGame1.Weapons
 {
@@ -159,7 +160,12 @@ namespace WindowsGame1.Weapons
         private bool TryRaycastBullet(Rectangle bulletRect, int i, float boundX)
         {
             bulletRect.X = i;
+            List<Enemy> availableEnemies = new List<Enemy>();
             foreach (Enemy item in Game1.EnemyContainer.Enemies)
+                if (item.GetCollider().Intersects(Game1.GamePlayCamera.GetRectangle(Game)))
+                    availableEnemies.Add(item);
+
+            foreach (Enemy item in availableEnemies)
             {
                 if (bulletRect.Intersects(item.GetCollider()))
                 {

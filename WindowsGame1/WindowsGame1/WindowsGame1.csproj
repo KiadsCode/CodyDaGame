@@ -140,6 +140,7 @@
     <Compile Include="Cody.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="EnemyContainer.cs" />
+    <Compile Include="Engine\MapProcessor.cs" />
     <Compile Include="Weapons\WeaponOffset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

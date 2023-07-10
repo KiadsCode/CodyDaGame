@@ -43,10 +43,10 @@ namespace WindowsGame1
             _spriteBatch.DrawString(Game1.SpriteFonts["hudfont"], Game1.Player.GetCurrentWeapon().AmmoCount.ToString(), new Vector2(100, 425), Color.White);
 
             #if DEBUG
-                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Dev Build--", Vector2.Zero, Color.White);
+                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Dev Build", Vector2.Zero, Color.White);
             #endif
             #if PROTOTYPE
-                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Pre Alpha Build--", Vector2.Zero, Color.White);
+                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], string.Format("Pre Alpha Build--\nShake available: {0},\nDash Test:", Game1.CameraShakeAvailable.ToString()), Vector2.Zero, Color.White);
             #endif
             _spriteBatch.End();
 

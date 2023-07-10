@@ -155,15 +155,6 @@
       <Time>2023-06-12T19:03:10.0625067+07:00</Time>
     </Item>
     <Item>
-      <Source>fonts\VCROSD.spritefont</Source>
-      <Name>fonts\vcr</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\fonts\vcr.xnb</Output>
-      <Time>2023-06-17T10:53:31.3640775+07:00</Time>
-    </Item>
-    <Item>
       <Source>shaders\invert.fx</Source>
       <Name>shaders\invert</Name>
       <Importer>EffectImporter</Importer>
@@ -207,6 +198,24 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\arShotC.xnb</Output>
       <Time>2023-06-21T23:05:33.4775071+07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\VCROSDRus.spritefont</Source>
+      <Name>fonts\vcr</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\fonts\vcr.xnb</Output>
+      <Time>2023-07-08T17:27:12.7523727+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\dashsound.wav</Source>
+      <Name>sounds\dashsound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\dashsound.xnb</Output>
+      <Time>2023-07-08T17:07:42.9419059+07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

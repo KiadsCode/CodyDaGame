@@ -20,9 +20,9 @@ namespace WindowsGame1
         public static EnemyContainer EnemyContainer;
         public static Camera GamePlayCamera = new Camera();
         public const int GlobalAnimationCoolDown = 2;
+        public static bool CameraShakeAvailable = false;
 
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
         private Random _random = new Random();
         private string[] _titles = 
         {
@@ -59,8 +59,6 @@ namespace WindowsGame1
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-
             // TODO: use this.Content to load your game content here
             Textures.Add("uiHealth", Content.Load<Texture2D>(@"images\\uiHealth"));
             Textures.Add("uiAim", Content.Load<Texture2D>(@"images\\uiAim"));
@@ -84,6 +82,7 @@ namespace WindowsGame1
             SoundEffects.Add("arShotC", Content.Load<SoundEffect>(@"sounds\\arShotC"));
             SoundEffects.Add("killsoundA", Content.Load<SoundEffect>(@"sounds\\killsoundA"));
             SoundEffects.Add("killsoundB", Content.Load<SoundEffect>(@"sounds\\killsoundB"));
+            SoundEffects.Add("dashsound", Content.Load<SoundEffect>(@"sounds\\dashsound"));
 
             SpriteSheets.Add(Player.AssetsName, SpriteSheetImporter.Import(Content, "images\\xml\\cody"));
             SpriteSheets.Add("arShot", SpriteSheetImporter.Import(Content, "images\\xml\\AssaultRifleShoot"));
@@ -94,11 +93,15 @@ namespace WindowsGame1
             Shaders.Add("invert", Content.Load<Effect>(@"shaders\\invert"));
             Shaders.Add("blur", Content.Load<Effect>(@"shaders\\blur"));
 
-            ComponentsInitialize();
+            Shaders["blur"].Parameters["fCoeff"].SetValue(0.08f);
 
-            for (int i = 1; i < 15; i++)
-                for (int j = 0; j < 5; j++)
-                    EnemyContainer.Add(new Vector2(i * 50, j * 52));
+            ComponentsInitialize();
+        }
+
+        public static void ResetEnemies(Game game)
+        {
+            EnemyContainer.KillNiggers();
+            EnemyContainer.SetData(MapProcessor.Process(game, "mA"));
         }
 
         private void ComponentsInitialize()
@@ -107,6 +110,7 @@ namespace WindowsGame1
             Components.Add(Player);
 
             EnemyContainer = new EnemyContainer(this);
+            EnemyContainer.SetData(MapProcessor.Process(this, "mA"));
             Components.Add(EnemyContainer);
 
             UserInterface = new UserInterface(this);

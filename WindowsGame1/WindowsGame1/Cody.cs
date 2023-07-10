@@ -6,19 +6,32 @@ using WindowsGame1.Weapons;
 
 namespace WindowsGame1
 {
+    public enum DashDirection
+    {
+        Left = -1,
+        Up = -2,
+        Right = 1,
+        Down = 2
+    }
     public class Player : DrawableGameComponent
     {
         public const string AssetsName = "codyGamePlay";
+        public const int DashCooldown = 50;
+        public const int DashPower = 34;
 
         private SpriteBatch _spriteBatch;
         private SpriteEffects _spriteEffect = SpriteEffects.None;
+        private Vector2 _dashStrength = Vector2.Zero;
         private Vector2 _position = Vector2.Zero;
         private KeyboardState _oldKeyboardState = Keyboard.GetState();
         private Weapon[] _weapons;
+        private DashDirection _dashDirection = DashDirection.Right;
         private int _frame = 0;
         private int _health = 70;
         private int _weaponIndex = 0;
         private int _direction = 1;
+        private int _dashCooldown = 25;
+        private bool _dashAvailable = false;
         private bool _slided = false;
 
         public int Health
@@ -83,27 +96,62 @@ namespace WindowsGame1
             _slided = false;
         }
 
+        private void ShakeCamera(float power)
+        {
+            if (Game1.CameraShakeAvailable)
+                Game1.GamePlayCamera.Rotation = power;
+        }
+
         public override void Update(GameTime gameTime)
         {
             KeyboardState keyboard = Keyboard.GetState();
+
+            if (_dashCooldown > 0)
+                _dashCooldown--;
+            _dashAvailable = _dashCooldown == 0;
+
+            if (keyboard.IsKeyDown(Keys.Space) && _oldKeyboardState.IsKeyUp(Keys.Space))
+            {
+                if (_dashAvailable)
+                {
+                    _dashStrength = new Vector2(DashPower * (int)_dashDirection, 0);
+                    ShakeCamera(0.15f * (float)_dashDirection);
+                    Game1.SoundEffects["dashsound"].Play();
+                    _dashCooldown = DashCooldown;
+                }
+            }
+            _position += _dashStrength;
+            Game1.GamePlayCamera.Rotation = MathHelper.Lerp(Game1.GamePlayCamera.Rotation, 0, 0.1f);
+            _dashStrength = Vector2.Lerp(_dashStrength, Vector2.Zero, 0.1f);
+
             if (_slided == false)
             {
                 _frame += 2;
                 _slided = _frame >= Game1.SpriteSheets[AssetsName].FramesCount - 1;
             }
 
+            if (keyboard.IsKeyDown(Keys.D2) && _oldKeyboardState.IsKeyUp(Keys.D2))
+                Game1.CameraShakeAvailable = !Game1.CameraShakeAvailable;
             if (keyboard.IsKeyDown(Keys.D) && keyboard.IsKeyUp(Keys.A))
-                if (GetCollider2D().Right + 5 < 900)
+            {
+                //if (GetCollider2D().Right + 5 < 900)
                     _position.X += 5;
+                _dashDirection = DashDirection.Right;
+            }
             if (keyboard.IsKeyDown(Keys.A) && keyboard.IsKeyUp(Keys.D))
-                if (GetCollider2D().Left - 5 > -100)
+            {
+                //if (GetCollider2D().Left - 5 > -100)
                     _position.X -= 5;
-
-            RotatePlayer();
+                _dashDirection = DashDirection.Left;
+            }
             if (keyboard.IsKeyDown(Keys.S))
                 _position.Y += 5;
             if (keyboard.IsKeyDown(Keys.W))
                 _position.Y -= 5;
+            if (keyboard.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R))
+                Game1.ResetEnemies(Game);
+
+            RotatePlayer();
             Game1.GamePlayCamera.Position = _position;
 
             bool switchingWeapon = keyboard.IsKeyDown(Keys.D1) && _oldKeyboardState.IsKeyUp(Keys.D1);

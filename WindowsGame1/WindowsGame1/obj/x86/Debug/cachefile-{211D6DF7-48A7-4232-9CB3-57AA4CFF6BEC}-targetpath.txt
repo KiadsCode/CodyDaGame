@@ -15,14 +15,16 @@ Content\sounds\killsoundB.xnb
 Content\images\codyGamePlay.xnb
 Content\images\fade.xnb
 Content\images\explosion.xnb
-Content\fonts\vcr.xnb
 Content\shaders\invert.xnb
 Content\shaders\monochrome.xnb
 Content\shaders\blur.xnb
 Content\sounds\weaponNoAmmo.xnb
 Content\sounds\arShotC.xnb
+Content\fonts\vcr.xnb
+Content\sounds\dashsound.xnb
 Content\images\xml\Cody.xml
 Content\images\xml\PistolShoot.xml
 Content\images\xml\CodyMenu.xml
 Content\images\xml\AssaultRifleShoot.xml
 Content\images\xml\Explosion.xml
+Content\maps\mA.cdm

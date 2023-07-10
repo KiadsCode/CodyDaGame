@@ -11,7 +11,6 @@ Content\images\enemy.xnb
 Content\images\fade.xnb
 Content\images\AssaultRifleShoot.xnb
 Content\images\explosion.xnb
-Content\fonts\vcr.xnb
 Content\fonts\hudFont.xnb
 Content\sounds\magnumShot.xnb
 Content\sounds\weaponNoAmmo.xnb
@@ -21,6 +20,8 @@ Content\sounds\arShotC.xnb
 Content\shaders\invert.xnb
 Content\shaders\monochrome.xnb
 Content\shaders\blur.xnb
+Content\sounds\dashsound.xnb
+Content\fonts\vcr.xnb
 Content\images\xml\Cody.xml
 Content\images\xml\PistolShoot.xml
 Content\images\xml\CodyMenu.xml
