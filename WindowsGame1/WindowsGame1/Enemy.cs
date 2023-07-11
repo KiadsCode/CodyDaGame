@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WindowsGame1
 {
-    public class Enemy
+    public class Enemy : IHitable
     {
         private int _health = 100;
         private short _direction = 1;

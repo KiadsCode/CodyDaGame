@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using WindowsGame1.Engine;
 using WindowsGame1.Weapons;
 
 namespace WindowsGame1
@@ -85,7 +86,7 @@ namespace WindowsGame1
 
         public Rectangle GetCollider2D()
         {
-            return new Rectangle((int)_position.X - Game1.SpriteSheets[AssetsName][_frame].Width / 2, (int)_position.Y - Game1.SpriteSheets["codyGamePlay"][_frame].Height / 2, Game1.SpriteSheets["codyGamePlay"][_frame].Width, Game1.SpriteSheets["codyGamePlay"][_frame].Height);
+            return new Rectangle((int)_position.X - ((Game1.SpriteSheets[AssetsName][_frame].Width / 2) - 5), (int)_position.Y - ((Game1.SpriteSheets["codyGamePlay"][_frame].Height / 2) - 5), Game1.SpriteSheets["codyGamePlay"][_frame].Width - 10, Game1.SpriteSheets["codyGamePlay"][_frame].Height - 10);
         }
 
         private void RotateToDirection(int dir, SpriteEffects se)
@@ -130,26 +131,72 @@ namespace WindowsGame1
                 _slided = _frame >= Game1.SpriteSheets[AssetsName].FramesCount - 1;
             }
 
-            if (keyboard.IsKeyDown(Keys.D2) && _oldKeyboardState.IsKeyUp(Keys.D2))
-                Game1.CameraShakeAvailable = !Game1.CameraShakeAvailable;
+            Rectangle trueCollider = GetCollider2D();
             if (keyboard.IsKeyDown(Keys.D) && keyboard.IsKeyUp(Keys.A))
             {
                 //if (GetCollider2D().Right + 5 < 900)
-                    _position.X += 5;
+                Rectangle potentialyCollider = new Rectangle(trueCollider.X + 5, trueCollider.Y, trueCollider.Width, trueCollider.Height);
+                bool hasPotentionalCollision = false;
+
+                foreach (Block item in Game1.MapComponent.Blocks)
+                {
+                    hasPotentionalCollision = item.GetCollider().Intersects(potentialyCollider);
+                    if (hasPotentionalCollision)
+                        break;
+                }
+
+                if (hasPotentionalCollision == false)
+                _position.X += 5;
                 _dashDirection = DashDirection.Right;
             }
+
             if (keyboard.IsKeyDown(Keys.A) && keyboard.IsKeyUp(Keys.D))
             {
                 //if (GetCollider2D().Left - 5 > -100)
+                Rectangle potentialyCollider = new Rectangle(trueCollider.X - 5, trueCollider.Y,trueCollider.Width,trueCollider.Height);
+                bool hasPotentionalCollision = false;
+
+                foreach (Block item in Game1.MapComponent.Blocks)
+                {
+                    hasPotentionalCollision = item.GetCollider().Intersects(potentialyCollider);
+                    if (hasPotentionalCollision)
+                        break;
+                }
+
+                if (hasPotentionalCollision == false)
                     _position.X -= 5;
                 _dashDirection = DashDirection.Left;
             }
             if (keyboard.IsKeyDown(Keys.S))
+            {
+                Rectangle potentialyCollider = new Rectangle(trueCollider.X, trueCollider.Y + 5, trueCollider.Width, trueCollider.Height);
+                bool hasPotentionalCollision = false;
+
+                foreach (Block item in Game1.MapComponent.Blocks)
+                {
+                    hasPotentionalCollision = item.GetCollider().Intersects(potentialyCollider);
+                    if (hasPotentionalCollision)
+                        break;
+                }
+
+                if (hasPotentionalCollision == false)
                 _position.Y += 5;
+            }
             if (keyboard.IsKeyDown(Keys.W))
+            {
+                Rectangle potentialyCollider = new Rectangle(trueCollider.X, trueCollider.Y - 5, trueCollider.Width, trueCollider.Height);
+                bool hasPotentionalCollision = false;
+
+                foreach (Block item in Game1.MapComponent.Blocks)
+                {
+                    hasPotentionalCollision = item.GetCollider().Intersects(potentialyCollider);
+                    if (hasPotentionalCollision)
+                        break;
+                }
+
+                if (hasPotentionalCollision == false)
                 _position.Y -= 5;
-            if (keyboard.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R))
-                Game1.ResetEnemies(Game);
+            }
 
             RotatePlayer();
             Game1.GamePlayCamera.Position = _position;
@@ -192,6 +239,8 @@ namespace WindowsGame1
         {
 #if DEBUG
             KeyboardState keyboardState = Keyboard.GetState();
+            if (keyboardState.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R))
+                Game1.ResetEnemies();
             if (keyboardState.IsKeyDown(Keys.N))
                 _weapons[_weaponIndex].AddAmmo(1);
 #endif
@@ -210,6 +259,8 @@ namespace WindowsGame1
 
             _spriteBatch.Draw(Game1.Textures[AssetsName], _position, Game1.SpriteSheets[AssetsName][_frame], Color.White, 0, new Vector2(Game1.SpriteSheets[AssetsName][_frame].Width / 2, Game1.SpriteSheets[AssetsName][_frame].Height / 2), 1, _spriteEffect, 0);
             _weapons[_weaponIndex].Draw(_spriteBatch);
+
+            //_spriteBatch.Draw(Game1.Textures["1x1"], GetCollider2D(), Color.Red);
 
             _spriteBatch.End();
             base.Draw(gameTime);

@@ -13,7 +13,7 @@ namespace WindowsGame1.Weapons
         {
             InitializeWeaponProperties(
                 60,
-                5,
+                10,
                 5,
                 true,
                 "arShot",

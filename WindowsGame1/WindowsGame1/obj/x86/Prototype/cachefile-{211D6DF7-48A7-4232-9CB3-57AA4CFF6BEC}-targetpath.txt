@@ -22,7 +22,13 @@ Content\shaders\monochrome.xnb
 Content\shaders\blur.xnb
 Content\sounds\dashsound.xnb
 Content\fonts\vcr.xnb
+Content\images\weakBlock.xnb
+Content\images\solidBlock.xnb
+Content\sounds\journey-end.xnb
+Content\sounds\journey-end.wma
+Content\sounds\explode1.xnb
 Content\images\xml\Cody.xml
+Content\maps\mA.cdm
 Content\images\xml\PistolShoot.xml
 Content\images\xml\CodyMenu.xml
 Content\images\xml\AssaultRifleShoot.xml

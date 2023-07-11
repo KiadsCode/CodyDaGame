@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using SparrowV2;
 using WindowsGame1.Engine;
 
@@ -15,12 +16,13 @@ namespace WindowsGame1
         public static Dictionary<string, SoundEffect> SoundEffects;
         public static Dictionary<string, SpriteFont> SpriteFonts;
         public static Dictionary<string, Effect> Shaders;
+        public static Dictionary<string, Song> Songs;
         public static Player Player;
         public static UserInterface UserInterface;
-        public static EnemyContainer EnemyContainer;
+        public static MapComponent MapComponent;
         public static Camera GamePlayCamera = new Camera();
         public const int GlobalAnimationCoolDown = 2;
-        public static bool CameraShakeAvailable = false;
+        public static bool CameraShakeAvailable = true;
 
         private GraphicsDeviceManager _graphics;
         private Random _random = new Random();
@@ -39,6 +41,7 @@ namespace WindowsGame1
             SoundEffects = new Dictionary<string, SoundEffect>();
             SpriteFonts = new Dictionary<string, SpriteFont>();
             Shaders = new Dictionary<string, Effect>();
+            Songs = new Dictionary<string, Song>();
             Content.RootDirectory = "Content";
         }
 
@@ -72,6 +75,8 @@ namespace WindowsGame1
             Textures.Add("codyMenu", Content.Load<Texture2D>(@"images\\codyMenu"));
             Textures.Add("enemy", Content.Load<Texture2D>(@"images\\enemy"));
             Textures.Add("arShot", Content.Load<Texture2D>(@"images\\AssaultRifleShoot"));
+            Textures.Add("weakBlock", Content.Load<Texture2D>(@"images\\weakBlock"));
+            Textures.Add("solidBlock", Content.Load<Texture2D>(@"images\\solidBlock"));
             Textures.Add("explosion", Content.Load<Texture2D>(@"images\\explosion"));
 
             SpriteFonts.Add("hudfont", Content.Load<SpriteFont>(@"fonts\\hudFont"));
@@ -83,6 +88,9 @@ namespace WindowsGame1
             SoundEffects.Add("killsoundA", Content.Load<SoundEffect>(@"sounds\\killsoundA"));
             SoundEffects.Add("killsoundB", Content.Load<SoundEffect>(@"sounds\\killsoundB"));
             SoundEffects.Add("dashsound", Content.Load<SoundEffect>(@"sounds\\dashsound"));
+            SoundEffects.Add("explode", Content.Load<SoundEffect>(@"sounds\\explode1"));
+
+            Songs.Add("je", Content.Load<Song>(@"sounds\\journey-end"));
 
             SpriteSheets.Add(Player.AssetsName, SpriteSheetImporter.Import(Content, "images\\xml\\cody"));
             SpriteSheets.Add("arShot", SpriteSheetImporter.Import(Content, "images\\xml\\AssaultRifleShoot"));
@@ -93,15 +101,15 @@ namespace WindowsGame1
             Shaders.Add("invert", Content.Load<Effect>(@"shaders\\invert"));
             Shaders.Add("blur", Content.Load<Effect>(@"shaders\\blur"));
 
-            Shaders["blur"].Parameters["fCoeff"].SetValue(0.08f);
+            MediaPlayer.IsRepeating = true;
+            //MediaPlayer.Play(Songs["je"]);
 
             ComponentsInitialize();
         }
 
-        public static void ResetEnemies(Game game)
+        public static void ResetEnemies()
         {
-            EnemyContainer.KillNiggers();
-            EnemyContainer.SetData(MapProcessor.Process(game, "mA"));
+            MapComponent.LoadMap("mA");
         }
 
         private void ComponentsInitialize()
@@ -109,20 +117,20 @@ namespace WindowsGame1
             Player = new Player(this);
             Components.Add(Player);
 
-            EnemyContainer = new EnemyContainer(this);
-            EnemyContainer.SetData(MapProcessor.Process(this, "mA"));
-            Components.Add(EnemyContainer);
-
             UserInterface = new UserInterface(this);
             Components.Add(UserInterface);
 
+            MapComponent = new MapComponent(this);
+            Components.Add(MapComponent);
+
+            ResetEnemies();
             foreach (IGameComponent item in Components)
                 item.Initialize();
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.SlateGray);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
 

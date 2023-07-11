@@ -217,6 +217,43 @@
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\fonts\vcr.xnb</Output>
       <Time>2023-07-08T17:27:12.7523727+07:00</Time>
     </Item>
+    <Item>
+      <Source>images\block.png</Source>
+      <Name>images\weakBlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\weakBlock.xnb</Output>
+      <Time>2023-07-11T18:49:16.3680371+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\export202307102211315773.png</Source>
+      <Name>images\solidBlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\solidBlock.xnb</Output>
+      <Time>2023-07-11T18:49:16.3660402+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\journey-end.mp3</Source>
+      <Name>sounds\journey-end</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\journey-end.xnb</Output>
+      <Extra>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\journey-end.wma</Extra>
+      <Time>2023-07-11T18:38:46.0210969+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\explode1.mp3</Source>
+      <Name>sounds\explode1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\explode1.xnb</Output>
+      <Time>2023-07-11T18:52:10.3024755+07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID Null="true" />

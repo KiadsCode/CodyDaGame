@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using WindowsGame1.Engine;
 
 namespace WindowsGame1.Weapons
 {
@@ -160,12 +161,18 @@ namespace WindowsGame1.Weapons
         private bool TryRaycastBullet(Rectangle bulletRect, int i, float boundX)
         {
             bulletRect.X = i;
-            List<Enemy> availableEnemies = new List<Enemy>();
-            foreach (Enemy item in Game1.EnemyContainer.Enemies)
-                if (item.GetCollider().Intersects(Game1.GamePlayCamera.GetRectangle(Game)))
-                    availableEnemies.Add(item);
 
-            foreach (Enemy item in availableEnemies)
+            List<IHitable> availableTargets = new List<IHitable>();
+
+            foreach (Enemy item in Game1.MapComponent.Enemies)
+                if (item.GetCollider().Intersects(Game1.GamePlayCamera.GetRectangle(Game)))
+                    availableTargets.Add(item);
+
+            foreach (Block item in Game1.MapComponent.Blocks)
+                if (item.GetCollider().Intersects(Game1.GamePlayCamera.GetRectangle(Game)))
+                    availableTargets.Add(item);
+
+            foreach (IHitable item in availableTargets)
             {
                 if (bulletRect.Intersects(item.GetCollider()))
                 {
@@ -182,7 +189,7 @@ namespace WindowsGame1.Weapons
             _ammo--;
             ResetCoolDown();
 
-            if (Game1.EnemyContainer.Count > 0)
+            if (Game1.MapComponent.EnemiesCount > 0)
             {
                 Rectangle bulletRect = _bulletRectStart;
                 if (_player.Direction == 1)
