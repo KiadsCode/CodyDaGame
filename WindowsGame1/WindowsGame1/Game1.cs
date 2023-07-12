@@ -110,6 +110,7 @@ namespace WindowsGame1
         public static void ResetEnemies()
         {
             MapComponent.LoadMap("mA");
+            GamePlayCamera.Position = Player.Position;
         }
 
         private void ComponentsInitialize()

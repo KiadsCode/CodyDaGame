@@ -60,6 +60,14 @@ namespace WindowsGame1.Engine
             _enemies.Clear();
             _blocks.Clear();
             UpdateData(MapProcessor.Process(Game, map));
+            foreach (Block item in _blocks)
+            {
+                if (item.Type == 3)
+                {
+                    Game1.Player.SetPosition(item.Position);
+                    break;
+                }
+            }
         }
 
         protected override void LoadContent()
