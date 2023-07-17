@@ -26,6 +26,8 @@ Content\images\weakBlock.xnb
 Content\images\solidBlock.xnb
 Content\sounds\journey-end.xnb
 Content\sounds\explode1.xnb
+Content\sounds\hitSoundA.xnb
+Content\sounds\hitSoundB.xnb
 Content\sounds\journey-end.wma
 Content\images\xml\Cody.xml
 Content\maps\mA.cdm

@@ -139,6 +139,7 @@
   <ItemGroup>
     <Compile Include="Cody.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="Engine\FrameRateComponent.cs" />
     <Compile Include="Engine\MapComponent.cs" />
     <Compile Include="Engine\MapData.cs" />
     <Compile Include="Engine\MapObject.cs" />

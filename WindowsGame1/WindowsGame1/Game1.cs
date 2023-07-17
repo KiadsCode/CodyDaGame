@@ -20,9 +20,11 @@ namespace WindowsGame1
         public static Player Player;
         public static UserInterface UserInterface;
         public static MapComponent MapComponent;
+        public static FrameRateComponent FpsComponent;
         public static Camera GamePlayCamera = new Camera();
         public const int GlobalAnimationCoolDown = 2;
         public static bool CameraShakeAvailable = true;
+
 
         private GraphicsDeviceManager _graphics;
         private Random _random = new Random();
@@ -101,10 +103,13 @@ namespace WindowsGame1
             Shaders.Add("invert", Content.Load<Effect>(@"shaders\\invert"));
             Shaders.Add("blur", Content.Load<Effect>(@"shaders\\blur"));
 
-            MediaPlayer.IsRepeating = true;
-            //MediaPlayer.Play(Songs["je"]);
-
             ComponentsInitialize();
+        }
+
+        private static void PlayBackGroundMusic()
+        {
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(Songs["je"]);
         }
 
         public static void ResetEnemies()
@@ -124,6 +129,9 @@ namespace WindowsGame1
             MapComponent = new MapComponent(this);
             Components.Add(MapComponent);
 
+            FpsComponent = new FrameRateComponent(this);
+            Components.Add(FpsComponent);
+
             ResetEnemies();
             foreach (IGameComponent item in Components)
                 item.Initialize();
@@ -134,6 +142,7 @@ namespace WindowsGame1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            // 
 
             base.Draw(gameTime);
         }

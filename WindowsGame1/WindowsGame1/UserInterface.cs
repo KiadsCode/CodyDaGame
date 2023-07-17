@@ -46,7 +46,7 @@ namespace WindowsGame1
                 _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Dev Build", Vector2.Zero, Color.White);
             #endif
             #if PROTOTYPE
-                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Pre Alpha Build--\nBlocks collision Test:", Vector2.Zero, Color.White);
+            _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Pre Alpha Build--\nBlocks collision Test:", Vector2.Zero, Color.White);
             #endif
             _spriteBatch.End();
 
