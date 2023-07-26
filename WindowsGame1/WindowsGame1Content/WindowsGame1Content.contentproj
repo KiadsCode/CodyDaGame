@@ -238,13 +238,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="images\Explosion.png">
-      <Name>explosion</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="images\xml\Explosion.xml">
       <Name>Explosion</Name>
       <Importer>XmlImporter</Importer>

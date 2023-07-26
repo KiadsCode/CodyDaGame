@@ -146,15 +146,6 @@
       <Time>2023-06-11T16:25:28.187977+07:00</Time>
     </Item>
     <Item>
-      <Source>images\Explosion.png</Source>
-      <Name>images\explosion</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\explosion.xnb</Output>
-      <Time>2023-06-12T19:03:10.0625067+07:00</Time>
-    </Item>
-    <Item>
       <Source>shaders\invert.fx</Source>
       <Name>shaders\invert</Name>
       <Importer>EffectImporter</Importer>

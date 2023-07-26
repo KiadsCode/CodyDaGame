@@ -137,14 +137,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cody.cs" />
+    <Compile Include="DashDirection.cs" />
+    <Compile Include="Engine\Collision\Gjk.cs" />
+    <Compile Include="Engine\Collision\Polygon2D.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="Engine\Collision\Circle.cs" />
     <Compile Include="Engine\FrameRateComponent.cs" />
-    <Compile Include="Engine\MapComponent.cs" />
-    <Compile Include="Engine\MapData.cs" />
-    <Compile Include="Engine\MapObject.cs" />
-    <Compile Include="Engine\MapProcessor.cs" />
-    <Compile Include="Engine\IHitable.cs" />
+    <Compile Include="Engine\Map\MapComponent.cs" />
+    <Compile Include="Engine\Map\MapData.cs" />
+    <Compile Include="Engine\Map\Block.cs" />
+    <Compile Include="Engine\Map\MapProcessor.cs" />
+    <Compile Include="Engine\Collision\IHitable.cs" />
     <Compile Include="Weapons\WeaponOffset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -164,6 +168,10 @@
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\conkoy\conkoy.csproj">
+      <Project>{87D71293-9DE0-4167-9A59-A0830076A568}</Project>
+      <Name>conkoy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WindowsGame1Content\WindowsGame1Content.contentproj">
       <Name>WindowsGame1Content</Name>
       <XnaReferenceType>Content</XnaReferenceType>

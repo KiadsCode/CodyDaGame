@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1", "WindowsGame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1Content", "WindowsGame1\WindowsGame1Content\WindowsGame1Content.contentproj", "{211D6DF7-48A7-4232-9CB3-57AA4CFF6BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "conkoy", "conkoy\conkoy.csproj", "{87D71293-9DE0-4167-9A59-A0830076A568}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +23,12 @@ Global
 		{211D6DF7-48A7-4232-9CB3-57AA4CFF6BEC}.Debug|x86.ActiveCfg = Debug|x86
 		{211D6DF7-48A7-4232-9CB3-57AA4CFF6BEC}.Prototype|x86.ActiveCfg = Release|x86
 		{211D6DF7-48A7-4232-9CB3-57AA4CFF6BEC}.Release|x86.ActiveCfg = Release|x86
+		{87D71293-9DE0-4167-9A59-A0830076A568}.Debug|x86.ActiveCfg = Debug|x86
+		{87D71293-9DE0-4167-9A59-A0830076A568}.Debug|x86.Build.0 = Debug|x86
+		{87D71293-9DE0-4167-9A59-A0830076A568}.Prototype|x86.ActiveCfg = Release|x86
+		{87D71293-9DE0-4167-9A59-A0830076A568}.Prototype|x86.Build.0 = Release|x86
+		{87D71293-9DE0-4167-9A59-A0830076A568}.Release|x86.ActiveCfg = Release|x86
+		{87D71293-9DE0-4167-9A59-A0830076A568}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

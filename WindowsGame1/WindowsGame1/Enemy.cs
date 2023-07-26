@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using WindowsGame1.Engine;
+using WindowsGame1.Engine.Collision;
 
 namespace WindowsGame1
 {
@@ -12,6 +13,7 @@ namespace WindowsGame1
         private short _direction = 1;
         private bool _alive = true;
         private Vector2 _position = Vector2.Zero;
+        private Circle _circle = new Circle(Vector2.Zero, 70);
         private SpriteEffects _spriteEffects = SpriteEffects.None;
         private Random _random = new Random();
 
@@ -61,15 +63,21 @@ namespace WindowsGame1
 
         public void Update()
         {
-            bool playerAfterEnemy = Game1.Player.Position.X > _position.X;
-            _direction = Convert.ToInt16(!playerAfterEnemy);
-            _spriteEffects = (SpriteEffects)_direction;
+            _circle.Center = _position;
+            if (_circle.Intersects(Game1.Player.GetCollider()))
+            {
+                bool playerAfterEnemy = Game1.Player.Position.X > _position.X;
+                _direction = Convert.ToInt16(!playerAfterEnemy);
+                _spriteEffects = (SpriteEffects)_direction;
+            }
         }
 
         public void Draw(SpriteBatch sp)
         {
             if (_alive)
+            {
                 sp.Draw(Game1.Textures["enemy"], _position, null, Color.White, 0, new Vector2(Game1.Textures["enemy"].Width / 2, Game1.Textures["enemy"].Height / 2), 1, _spriteEffects, 0);
+            }
         }
 
     }

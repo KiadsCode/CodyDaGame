@@ -39,6 +39,7 @@ namespace WindowsGame1
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, null, null, null, null, _uiCamera.GetMatrix(Game.GraphicsDevice));
 
             _spriteBatch.Draw(Game1.Textures["playerHUD"], new Vector2(10, 390), Color.White);
+            DrawHealth();
 
             _spriteBatch.DrawString(Game1.SpriteFonts["hudfont"], Game1.Player.GetCurrentWeapon().AmmoCount.ToString(), new Vector2(100, 425), Color.White);
 

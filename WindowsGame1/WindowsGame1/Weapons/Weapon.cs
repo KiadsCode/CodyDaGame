@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using WindowsGame1.Engine;
+using WindowsGame1.Engine.Collision;
+using WindowsGame1.Engine.Map;
 
 namespace WindowsGame1.Weapons
 {

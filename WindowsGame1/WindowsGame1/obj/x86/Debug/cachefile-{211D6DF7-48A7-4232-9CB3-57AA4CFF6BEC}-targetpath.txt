@@ -14,7 +14,6 @@ Content\sounds\killsoundA.xnb
 Content\sounds\killsoundB.xnb
 Content\images\codyGamePlay.xnb
 Content\images\fade.xnb
-Content\images\explosion.xnb
 Content\shaders\invert.xnb
 Content\shaders\monochrome.xnb
 Content\shaders\blur.xnb

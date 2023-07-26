@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using SparrowV2;
 using WindowsGame1.Engine;
+using WindowsGame1.Engine.Map;
 
 namespace WindowsGame1
 {
@@ -25,14 +26,14 @@ namespace WindowsGame1
         public const int GlobalAnimationCoolDown = 2;
         public static bool CameraShakeAvailable = true;
 
-
         private GraphicsDeviceManager _graphics;
         private Random _random = new Random();
         private string[] _titles = 
         {
             "FireTeam Osiris. Light is green",
             "Betrayed",
-            "Used zero budget"
+            "Used zero budget",
+            "Were it so easy"
         };
 
         public Game1()
@@ -79,7 +80,6 @@ namespace WindowsGame1
             Textures.Add("arShot", Content.Load<Texture2D>(@"images\\AssaultRifleShoot"));
             Textures.Add("weakBlock", Content.Load<Texture2D>(@"images\\weakBlock"));
             Textures.Add("solidBlock", Content.Load<Texture2D>(@"images\\solidBlock"));
-            Textures.Add("explosion", Content.Load<Texture2D>(@"images\\explosion"));
 
             SpriteFonts.Add("hudfont", Content.Load<SpriteFont>(@"fonts\\hudFont"));
             SpriteFonts.Add("vcr", Content.Load<SpriteFont>(@"fonts\\vcr"));
@@ -91,6 +91,7 @@ namespace WindowsGame1
             SoundEffects.Add("killsoundB", Content.Load<SoundEffect>(@"sounds\\killsoundB"));
             SoundEffects.Add("dashsound", Content.Load<SoundEffect>(@"sounds\\dashsound"));
             SoundEffects.Add("explode", Content.Load<SoundEffect>(@"sounds\\explode1"));
+
 
             Songs.Add("je", Content.Load<Song>(@"sounds\\journey-end"));
 
@@ -104,6 +105,12 @@ namespace WindowsGame1
             Shaders.Add("blur", Content.Load<Effect>(@"shaders\\blur"));
 
             ComponentsInitialize();
+        }
+
+        protected override void UnloadContent()
+        {
+            Content.Unload();
+            base.UnloadContent();
         }
 
         private static void PlayBackGroundMusic()

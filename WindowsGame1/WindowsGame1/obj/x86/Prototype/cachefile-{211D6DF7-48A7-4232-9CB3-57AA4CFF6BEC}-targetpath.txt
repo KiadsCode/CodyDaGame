@@ -10,7 +10,6 @@ Content\images\1x1.xnb
 Content\images\enemy.xnb
 Content\images\fade.xnb
 Content\images\AssaultRifleShoot.xnb
-Content\images\explosion.xnb
 Content\fonts\hudFont.xnb
 Content\sounds\magnumShot.xnb
 Content\sounds\weaponNoAmmo.xnb
