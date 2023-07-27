@@ -7,8 +7,6 @@ using Microsoft.Xna.Framework.Media;
 using SparrowV2;
 using WindowsGame1.Engine;
 using WindowsGame1.Engine.Map;
-using WindowsGame1.Engine.Collision;
-using PolyLib;
 
 namespace WindowsGame1
 {

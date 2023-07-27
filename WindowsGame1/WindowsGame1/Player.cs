@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Input;
 using WindowsGame1.Engine.Collision;
 using WindowsGame1.Engine.Map;
 using WindowsGame1.Weapons;
-using PolyLib;
 
 namespace WindowsGame1
 {
