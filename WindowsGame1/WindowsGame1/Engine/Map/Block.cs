@@ -44,7 +44,6 @@ namespace WindowsGame1.Engine.Map
             if (_type != 0 && _type != 3)
             {
                 _health -= damage;
-                System.Console.WriteLine(_health);
                 _alive = _health > 0;
                 if (_alive == false)
                     Game1.SoundEffects["explode"].Play();

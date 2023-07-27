@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace WindowsGame1.Engine.Map
 {
-    public class MapComponent : DrawableGameComponent
+    public class Map : DrawableGameComponent
     {
         private List<Enemy> _enemies;
         private List<Block> _blocks;
@@ -42,7 +42,7 @@ namespace WindowsGame1.Engine.Map
             }
         }
 
-        public MapComponent(Game game)
+        public Map(Game game)
             : base(game)
         {
             _blocks = new List<Block>();

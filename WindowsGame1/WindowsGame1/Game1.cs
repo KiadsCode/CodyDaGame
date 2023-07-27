@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Media;
 using SparrowV2;
 using WindowsGame1.Engine;
 using WindowsGame1.Engine.Map;
+using WindowsGame1.Engine.Collision;
+using PolyLib;
 
 namespace WindowsGame1
 {
@@ -20,7 +22,7 @@ namespace WindowsGame1
         public static Dictionary<string, Song> Songs;
         public static Player Player;
         public static UserInterface UserInterface;
-        public static MapComponent MapComponent;
+        public static Map MapComponent;
         public static FrameRateComponent FpsComponent;
         public static Camera GamePlayCamera = new Camera();
         public const int GlobalAnimationCoolDown = 2;
@@ -92,7 +94,6 @@ namespace WindowsGame1
             SoundEffects.Add("dashsound", Content.Load<SoundEffect>(@"sounds\\dashsound"));
             SoundEffects.Add("explode", Content.Load<SoundEffect>(@"sounds\\explode1"));
 
-
             Songs.Add("je", Content.Load<Song>(@"sounds\\journey-end"));
 
             SpriteSheets.Add(Player.AssetsName, SpriteSheetImporter.Import(Content, "images\\xml\\cody"));
@@ -105,6 +106,7 @@ namespace WindowsGame1
             Shaders.Add("blur", Content.Load<Effect>(@"shaders\\blur"));
 
             ComponentsInitialize();
+            PlayBackGroundMusic();
         }
 
         protected override void UnloadContent()
@@ -133,7 +135,7 @@ namespace WindowsGame1
             UserInterface = new UserInterface(this);
             Components.Add(UserInterface);
 
-            MapComponent = new MapComponent(this);
+            MapComponent = new Map(this);
             Components.Add(MapComponent);
 
             FpsComponent = new FrameRateComponent(this);
@@ -149,7 +151,6 @@ namespace WindowsGame1
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            // 
 
             base.Draw(gameTime);
         }

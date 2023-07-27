@@ -92,15 +92,6 @@
       <Time>2023-06-10T12:18:22.1500912+07:00</Time>
     </Item>
     <Item>
-      <Source>sounds\PistolOutOfAmmo.wav</Source>
-      <Name>sounds\magnumNoAmmo</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\magnumNoAmmo.xnb</Output>
-      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
-    </Item>
-    <Item>
       <Source>fonts\ToonAround.spritefont</Source>
       <Name>fonts\hudFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -128,33 +119,6 @@
       <Time>2023-06-11T22:26:52.1152497+07:00</Time>
     </Item>
     <Item>
-      <Source>sounds\AssaulRifleOutOfAmmo.wav</Source>
-      <Name>sounds\assaultRifleNoAmmo</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\assaultRifleNoAmmo.xnb</Output>
-      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\AssaultRifleA.wav</Source>
-      <Name>sounds\assaultRifleShotA</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\assaultRifleShotA.xnb</Output>
-      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
-    </Item>
-    <Item>
-      <Source>sounds\AssaultRifleB.wav</Source>
-      <Name>sounds\assaultRifleShotB</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\assaultRifleShotB.xnb</Output>
-      <Time>2023-06-10T13:19:01.4301409+07:00</Time>
-    </Item>
-    <Item>
       <Source>images\AssaultRifleShoot.png</Source>
       <Name>images\AssaultRifleShoot</Name>
       <Importer>TextureImporter</Importer>
@@ -173,15 +137,6 @@
       <Time>2023-06-11T16:25:28.187977+07:00</Time>
     </Item>
     <Item>
-      <Source>images\Explosion.png</Source>
-      <Name>images\explosion</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\images\explosion.xnb</Output>
-      <Time>2023-06-12T19:03:10.0625067+07:00</Time>
-    </Item>
-    <Item>
       <Source>images\Codyp.png</Source>
       <Name>images\codyGamePlay</Name>
       <Importer>TextureImporter</Importer>
@@ -189,15 +144,6 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\images\codyGamePlay.xnb</Output>
       <Time>2023-06-09T13:59:48.4061188+07:00</Time>
-    </Item>
-    <Item>
-      <Source>fonts\VCROSD.spritefont</Source>
-      <Name>fonts\vcr</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\fonts\vcr.xnb</Output>
-      <Time>2023-06-17T10:53:31.3640775+07:00</Time>
     </Item>
     <Item>
       <Source>shaders\invert.fx</Source>
@@ -225,6 +171,79 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\shaders\blur.xnb</Output>
       <Time>2023-06-17T14:24:21.8992694+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\block.png</Source>
+      <Name>images\weakBlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\images\weakBlock.xnb</Output>
+      <Time>2023-07-11T18:49:16.3680371+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\export202307102211315773.png</Source>
+      <Name>images\solidBlock</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\images\solidBlock.xnb</Output>
+      <Time>2023-07-11T18:49:16.3660402+07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\VCROSDRus.spritefont</Source>
+      <Name>fonts\vcr</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\fonts\vcr.xnb</Output>
+      <Time>2023-07-08T17:27:12.7523727+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\journey-end.mp3</Source>
+      <Name>sounds\journey-end</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\journey-end.xnb</Output>
+      <Extra>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\journey-end.wma</Extra>
+      <Time>2023-07-11T18:38:46.0210969+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\explode1.mp3</Source>
+      <Name>sounds\explode1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\explode1.xnb</Output>
+      <Time>2023-07-11T18:52:10.3024755+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\WeaponNoAmmo.wav</Source>
+      <Name>sounds\weaponNoAmmo</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\weaponNoAmmo.xnb</Output>
+      <Time>2023-06-10T13:19:01.4145215+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\AssShotC.wav</Source>
+      <Name>sounds\arShotC</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\arShotC.xnb</Output>
+      <Time>2023-06-21T23:05:33.4775071+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\dashsound.wav</Source>
+      <Name>sounds\dashsound</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Release\Content\sounds\dashsound.xnb</Output>
+      <Time>2023-07-08T17:07:42.9419059+07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

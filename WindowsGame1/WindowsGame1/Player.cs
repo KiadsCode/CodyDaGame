@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using WindowsGame1.Engine.Collision;
 using WindowsGame1.Engine.Map;
 using WindowsGame1.Weapons;
+using PolyLib;
 
 namespace WindowsGame1
 {
@@ -15,6 +16,7 @@ namespace WindowsGame1
         public const int DashPower = 34;
 
         private SpriteBatch _spriteBatch;
+
         private SpriteEffects _spriteEffect = SpriteEffects.None;
         private Vector2 _dashStrength = Vector2.Zero;
         private Vector2 _position = Vector2.Zero;
@@ -164,9 +166,6 @@ namespace WindowsGame1
                 }
             }
 
-            if (keyboard.IsKeyDown(Keys.G) && _oldKeyboardState.IsKeyUp(Keys.G))
-                Hit(15);
-
             _position += _dashStrength;
             Game1.GamePlayCamera.Rotation = MathHelper.Lerp(Game1.GamePlayCamera.Rotation, 0, 0.1f);
             _dashStrength = Vector2.Lerp(_dashStrength, Vector2.Zero, 0.1f);
@@ -242,11 +241,13 @@ namespace WindowsGame1
         private void DebugFeatures()
         {
 #if DEBUG
-            KeyboardState keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R))
+            KeyboardState keyboard = Keyboard.GetState();
+            if (keyboard.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R))
                 Game1.ResetEnemies();
-            if (keyboardState.IsKeyDown(Keys.N))
+            if (keyboard.IsKeyDown(Keys.N))
                 _weapons[_weaponIndex].AddAmmo(1);
+            if (keyboard.IsKeyDown(Keys.G) && _oldKeyboardState.IsKeyUp(Keys.G))
+                Hit(15);
 #endif
         }
 

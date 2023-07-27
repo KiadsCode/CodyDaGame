@@ -120,6 +120,9 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
+    <Reference Include="polylib">
+      <HintPath>..\..\..\PolygonTest\polylib\bin\x86\Release\polylib.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
@@ -138,8 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DashDirection.cs" />
-    <Compile Include="Engine\Collision\Gjk.cs" />
-    <Compile Include="Engine\Collision\Polygon2D.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Engine\Collision\Circle.cs" />

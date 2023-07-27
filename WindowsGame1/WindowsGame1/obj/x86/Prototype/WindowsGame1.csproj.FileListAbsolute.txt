@@ -38,3 +38,5 @@ D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\b
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\maps\mA.cdm
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\conkoy.exe
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\conkoy.pdb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\polylib.dll
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\polylib.pdb

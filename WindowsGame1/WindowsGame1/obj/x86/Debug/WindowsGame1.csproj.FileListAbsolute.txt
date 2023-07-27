@@ -38,3 +38,7 @@ D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\b
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\weakBlock.xnb
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\solidBlock.xnb
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\explode1.xnb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\conkoy.exe
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\conkoy.pdb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\polylib.dll
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\polylib.pdb
