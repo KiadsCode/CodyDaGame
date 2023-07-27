@@ -5,29 +5,15 @@ namespace WindowsGame1.Engine
 {
     public struct Circle
     {
-        /// <summary>
-        /// Center position of the circle.
-        /// </summary>
         public Vector2 Center;
-
-        /// <summary>
-        /// Radius of the circle.
-        /// </summary>
         public int Radius;
 
-        /// <summary>
-        /// Constructs a new circle.
-        /// </summary>
         public Circle(Vector2 position, int radius)
         {
             Center = position;
             Radius = radius;
         }
 
-        /// <summary>
-        /// Determines if a circle intersects a rectangle.
-        /// </summary>
-        /// <returns>True if the circle and rectangle overlap. False otherwise.</returns>
         public bool Intersects(Rectangle rectangle)
         {
             Vector2 v = new Vector2(MathHelper.Clamp(Center.X, rectangle.Left, rectangle.Right),
@@ -45,7 +31,7 @@ namespace WindowsGame1.Engine
             spriteBatch.Draw(texture, Center, null, Color.Black, 0, new Vector2(texture.Width / 2, texture.Height / 2), new Vector2(1, 1), SpriteEffects.None, 0);
         }
 
-        public Texture2D GetVisualization(GraphicsDevice graphicsDevice)
+        private Texture2D GetVisualization(GraphicsDevice graphicsDevice)
         {
             int radius = Radius * 2;
             Texture2D texture = new Texture2D(graphicsDevice, radius, radius);

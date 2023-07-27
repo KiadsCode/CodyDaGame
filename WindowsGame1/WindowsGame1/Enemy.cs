@@ -13,7 +13,7 @@ namespace WindowsGame1
         private short _direction = 1;
         private bool _alive = true;
         private Vector2 _position = Vector2.Zero;
-        private Circle _circle = new Circle(Vector2.Zero, 70);
+        private Circle _circle = new Circle(Vector2.Zero, 80);
         private SpriteEffects _spriteEffects = SpriteEffects.None;
         private Random _random = new Random();
 
