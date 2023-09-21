@@ -16,5 +16,14 @@ namespace SparrowV2
             SpriteSheet timp = processor.Process(path);
             return timp;
         }
+        public static SpriteSheet Import(string filename)
+        {
+            // TODO: read the specified file into an instance of the imported type.
+            if (File.Exists(string.Format("{0}.xml", filename)) == false)
+                throw new Exception(string.Format("File \"{0}\" does not exist", filename));
+            SpriteSheetProcessor processor = new SpriteSheetProcessor();
+            SpriteSheet timp = processor.Process(filename);
+            return timp;
+        }
     }
 }

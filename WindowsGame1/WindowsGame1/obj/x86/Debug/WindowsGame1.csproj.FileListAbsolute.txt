@@ -42,3 +42,13 @@ D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\b
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\conkoy.pdb
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\polylib.dll
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\polylib.pdb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\discord_game_sdk.dll
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\PistolSilencerShoot.xnb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\magnumShotUNSU.xnb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\magnumSilencerShot.xnb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\xml\PistolSilencerShoot.xml
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\smgShoot.xnb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\sounds\smgShoot.xnb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\images\xml\SmgShoot.xml
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\maps\SmgTest.cdm
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Debug\Content\maps\someKindOfTest.cdm

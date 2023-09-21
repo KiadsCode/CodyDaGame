@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Media;
 using SparrowV2;
 using WindowsGame1.Engine;
 using WindowsGame1.Engine.Map;
+using WindowsGame1.Engine.Discord;
 
 namespace WindowsGame1
 {
@@ -20,6 +21,7 @@ namespace WindowsGame1
         public static Dictionary<string, Song> Songs;
         public static Player Player;
         public static UserInterface UserInterface;
+        public static DiscordComponent DiscordComponent;
         public static Map MapComponent;
         public static FrameRateComponent FpsComponent;
         public static Camera GamePlayCamera = new Camera();
@@ -73,6 +75,8 @@ namespace WindowsGame1
             Textures.Add("fade", Content.Load<Texture2D>(@"images\\fade"));
             Textures.Add(Player.AssetsName, Content.Load<Texture2D>(@"images\\codyGamePlay"));
             Textures.Add("pistolShot", Content.Load<Texture2D>(@"images\\PistolShoot"));
+            Textures.Add("smgShot", Content.Load<Texture2D>(@"images\\SmgShoot"));
+            Textures.Add("pistolSilencerShot", Content.Load<Texture2D>(@"images\\PistolSilencerShoot"));
             Textures.Add("menuBG", Content.Load<Texture2D>(@"images\\menuBG"));
             Textures.Add("1x1", Content.Load<Texture2D>(@"images\\1x1"));
             Textures.Add("codyMenu", Content.Load<Texture2D>(@"images\\codyMenu"));
@@ -85,6 +89,8 @@ namespace WindowsGame1
             SpriteFonts.Add("vcr", Content.Load<SpriteFont>(@"fonts\\vcr"));
 
             SoundEffects.Add("magnum", Content.Load<SoundEffect>(@"sounds\\magnumShot"));
+            SoundEffects.Add("smg", Content.Load<SoundEffect>(@"sounds\\smgShoot"));
+            SoundEffects.Add("magnumSilencer", Content.Load<SoundEffect>(@"sounds\\magnumSilencerShot"));
             SoundEffects.Add("weaponNoAmmo", Content.Load<SoundEffect>(@"sounds\\weaponNoAmmo"));
             SoundEffects.Add("arShotC", Content.Load<SoundEffect>(@"sounds\\arShotC"));
             SoundEffects.Add("killsoundA", Content.Load<SoundEffect>(@"sounds\\killsoundA"));
@@ -97,6 +103,8 @@ namespace WindowsGame1
             SpriteSheets.Add(Player.AssetsName, SpriteSheetImporter.Import(Content, "images\\xml\\cody"));
             SpriteSheets.Add("arShot", SpriteSheetImporter.Import(Content, "images\\xml\\AssaultRifleShoot"));
             SpriteSheets.Add("pistolShot", SpriteSheetImporter.Import(Content, "images\\xml\\PistolShoot"));
+            SpriteSheets.Add("smgShot", SpriteSheetImporter.Import(Content, "images\\xml\\SmgShoot"));
+            SpriteSheets.Add("pistolSilencerShot", SpriteSheetImporter.Import(Content, "images\\xml\\PistolSilencerShoot"));
             SpriteSheets.Add("codyMenu", SpriteSheetImporter.Import(Content, "images\\xml\\CodyMenu"));
 
             Shaders.Add("mono", Content.Load<Effect>(@"shaders\\monochrome"));
@@ -121,12 +129,15 @@ namespace WindowsGame1
 
         public static void ResetEnemies()
         {
-            MapComponent.LoadMap("mA");
+            MapComponent.Load("mA");
             GamePlayCamera.Position = Player.Position;
         }
 
         private void ComponentsInitialize()
         {
+            DiscordComponent = new DiscordComponent(this);
+            Components.Add(DiscordComponent);
+
             Player = new Player(this);
             Components.Add(Player);
 

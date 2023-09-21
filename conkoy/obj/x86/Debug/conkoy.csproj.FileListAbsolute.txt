@@ -2,3 +2,4 @@ D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\conkoy\bin\Debug\conkoy.exe
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\conkoy\bin\Debug\conkoy.pdb
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\conkoy\obj\x86\Debug\conkoy.exe
 D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\conkoy\obj\x86\Debug\conkoy.pdb
+D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\conkoy\obj\x86\Debug\conkoy.csprojResolveAssemblyReference.cache

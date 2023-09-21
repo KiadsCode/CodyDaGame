@@ -126,6 +126,7 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -141,6 +142,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DashDirection.cs" />
+    <Compile Include="Engine\Discord\ActivityManager.cs" />
+    <Compile Include="Engine\Discord\Constants.cs" />
+    <Compile Include="Engine\Discord\Core.cs" />
+    <Compile Include="Engine\Discord\DiscordComponent.cs" />
+    <Compile Include="Engine\Discord\ImageHandle.cs" />
+    <Compile Include="Engine\Discord\LobbyManager.cs" />
+    <Compile Include="Engine\Discord\StorageManager.cs" />
+    <Compile Include="Engine\Discord\StoreManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Engine\Collision\Circle.cs" />
@@ -162,9 +171,14 @@
     <Compile Include="Weapons\AssaultRifle.cs" />
     <Compile Include="Weapons\Magnum.cs" />
     <Compile Include="Weapons\Weapon.cs" />
+    <Compile Include="Weapons\MagnumSilencer.cs" />
+    <Compile Include="Weapons\Smg.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodyIcon.ico" />
+    <Content Include="discord_game_sdk.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>

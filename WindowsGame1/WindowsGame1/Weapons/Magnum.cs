@@ -19,7 +19,7 @@ namespace WindowsGame1.Weapons
                 "pistolShot",
                 "pistolShot",
                 new WeaponOffset(new Vector2(130, 35), new Vector2(20, -35)),
-                new WeaponOffset(new Vector2(20, -35), new Vector2(16, -35))
+                new WeaponOffset(new Vector2(24, -35), new Vector2(16, -35))
                 );
             base.Initialize();
         }

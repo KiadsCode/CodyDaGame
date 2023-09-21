@@ -101,10 +101,18 @@
       <Processor>FontDescriptionProcessor</Processor>
       <SubType>Designer</SubType>
     </Compile>
-    <None Include="maps\mA.cdm">
+    <Content Include="maps\mA.cdm">
       <Name>mA</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="maps\SmgTest.cdm">
+      <Name>SmgTest</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="maps\someKindOfTest.cdm">
+      <Name>someKindOfTest</Name>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -150,7 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="sounds\magnum-1.mp3">
-      <Name>magnumShot</Name>
+      <Name>magnumShotUNSU</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
@@ -288,6 +296,55 @@
   <ItemGroup>
     <Compile Include="sounds\explode1.mp3">
       <Name>explode1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="images\PistolSilencerShoot.png">
+      <Name>PistolSilencerShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\xml\PistolSilencerShoot.xml">
+      <Name>PistolSilencerShoot</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sounds\free-sound-1674847857.mp3">
+      <Name>magnumShot</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\PistolSilencerShot.mp3">
+      <Name>magnumSilencerShot</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="images\SmgShoot.png">
+      <Name>smgShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\xml\SmgShoot.xml">
+      <Name>SmgShoot</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sounds\H5_SMG_1.mp3">
+      <Name>smgShoot</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>

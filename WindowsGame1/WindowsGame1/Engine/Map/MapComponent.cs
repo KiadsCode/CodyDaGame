@@ -55,11 +55,28 @@ namespace WindowsGame1.Engine.Map
             _enemies = data.Enemies;
         }
 
-        public void LoadMap(string map)
+        public void Load(string map)
         {
             _enemies.Clear();
             _blocks.Clear();
-            UpdateData(MapProcessor.Process(Game, map));
+            MapData extractedDataMap = MapProcessor.Process(Game, map);
+            UpdateData(extractedDataMap);
+            foreach (Block item in _blocks)
+            {
+                if (item.Type == 3)
+                {
+                    Game1.Player.SetPosition(item.Position);
+                    break;
+                }
+            }
+        }
+
+        public void LoadFromPath(string map)
+        {
+            _enemies.Clear();
+            _blocks.Clear();
+            MapData extractedDataMap = MapProcessor.Process(map);
+            UpdateData(extractedDataMap);
             foreach (Block item in _blocks)
             {
                 if (item.Type == 3)

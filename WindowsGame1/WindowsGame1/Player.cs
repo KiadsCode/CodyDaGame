@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Input;
 using WindowsGame1.Engine.Collision;
 using WindowsGame1.Engine.Map;
 using WindowsGame1.Weapons;
+using System.IO;
 
 namespace WindowsGame1
 {
@@ -20,6 +21,7 @@ namespace WindowsGame1
         private Vector2 _dashStrength = Vector2.Zero;
         private Vector2 _position = Vector2.Zero;
         private KeyboardState _oldKeyboardState = Keyboard.GetState();
+        private GamePadState _oldGamePadState = GamePad.GetState(PlayerIndex.One);
         private Weapon[] _weapons;
         private DashDirection _dashDirection = DashDirection.Right;
         private int _frame = 0;
@@ -81,7 +83,7 @@ namespace WindowsGame1
             : base(game)
         {
             DrawOrder = 1;
-            _weapons = new Weapon[] { new AssaultRifle(game), new Magnum(game) };
+            _weapons = new Weapon[] { new MagnumSilencer(game), new Smg(game) };
         }
 
         protected override void LoadContent()
@@ -144,6 +146,9 @@ namespace WindowsGame1
         public override void Update(GameTime gameTime)
         {
             KeyboardState keyboard = Keyboard.GetState();
+            GamePadState gamePad = GamePad.GetState(PlayerIndex.One);
+            MouseState mouseState = Mouse.GetState();
+
             if (_regenerationCooldown > 0)
                 _regenerationCooldown--;
             if (_dashCooldown > 0)
@@ -153,7 +158,7 @@ namespace WindowsGame1
             if (_regenerationCooldown == 0 && _health < 70)
                 _health++;
 
-            if (keyboard.IsKeyDown(Keys.Space) && _oldKeyboardState.IsKeyUp(Keys.Space))
+            if (keyboard.IsKeyDown(Keys.Space) && _oldKeyboardState.IsKeyUp(Keys.Space) || gamePad.Buttons.RightShoulder == ButtonState.Pressed && _oldGamePadState.Buttons.RightShoulder == ButtonState.Released)
             {
                 if (_dashAvailable)
                 {
@@ -176,34 +181,60 @@ namespace WindowsGame1
             }
 
             Rectangle trueCollider = GetCollider();
-            if (keyboard.IsKeyDown(Keys.D) && keyboard.IsKeyUp(Keys.A))
+
+            if (gamePad.Buttons.Back == ButtonState.Pressed)
+                Game.Exit(); 
+
+            if (keyboard.IsKeyDown(Keys.D) && keyboard.IsKeyUp(Keys.A) || gamePad.ThumbSticks.Left.X > 0)
             {
                 if (HasPotentialCollision(5) == false)
-                    _position.X += 5;
+                {
+                    if (gamePad.IsConnected)
+                        _position.X += gamePad.ThumbSticks.Left.X * 5.5f;
+                    else
+                        _position.X += 5.5f;
+                }
                 _dashDirection = DashDirection.Right;
             }
 
-            if (keyboard.IsKeyDown(Keys.A) && keyboard.IsKeyUp(Keys.D))
+
+            if (keyboard.IsKeyDown(Keys.A) && keyboard.IsKeyUp(Keys.D) || gamePad.ThumbSticks.Left.X < 0)
             {
                 if (HasPotentialCollision(-5) == false)
-                    _position.X -= 5;
+                {
+                    if (gamePad.IsConnected)
+                        _position.X += gamePad.ThumbSticks.Left.X * 5.5f;
+                    else
+                        _position.X -= 5.5f;
+                }
                 _dashDirection = DashDirection.Left;
             }
-            if (keyboard.IsKeyDown(Keys.S))
+            if (keyboard.IsKeyDown(Keys.S) || gamePad.ThumbSticks.Left.Y < 0)
             {
                 if (HasPotentialCollision(0, 5) == false)
-                    _position.Y += 5;
+                {
+                    if (gamePad.IsConnected)
+                        _position.Y -= gamePad.ThumbSticks.Left.Y * 5.5f;
+                    else
+                        _position.Y += 5.5f;
+                }
             }
-            if (keyboard.IsKeyDown(Keys.W))
+            if (keyboard.IsKeyDown(Keys.W) || gamePad.ThumbSticks.Left.Y > 0)
             {
                 if (HasPotentialCollision(0, -5) == false)
-                    _position.Y -= 5;
+                {
+                    if (gamePad.IsConnected)
+                        _position.Y -= gamePad.ThumbSticks.Left.Y * 5.5f;
+                    else
+                        _position.Y -= 5.5f;
+                }
             }
+            Mouse.SetPosition(mouseState.X + (int)(gamePad.ThumbSticks.Right.X * 8.5f), mouseState.Y - (int)(gamePad.ThumbSticks.Right.Y * 8.5f));
 
             RotatePlayer();
             Game1.GamePlayCamera.Position = _position;
 
-            bool switchingWeapon = keyboard.IsKeyDown(Keys.D1) && _oldKeyboardState.IsKeyUp(Keys.D1);
+            bool switchingWeapon = keyboard.IsKeyDown(Keys.D1) && _oldKeyboardState.IsKeyUp(Keys.D1) || gamePad.Buttons.Y == ButtonState.Pressed && _oldGamePadState.Buttons.Y == ButtonState.Released;
             if (switchingWeapon)
                 SwitchWeapon();
 
@@ -217,11 +248,13 @@ namespace WindowsGame1
             }
 
             _oldKeyboardState = keyboard;
+            _oldGamePadState = gamePad;
             base.Update(gameTime);
         }
 
         private void RotatePlayer()
         {
+
             MouseState mouseState = Mouse.GetState();
             bool mouseAfterPlayer = Convert.ToSingle(mouseState.X) + (_position.X - Game.Window.ClientBounds.Width / 2) > _position.X;
             switch (mouseAfterPlayer)
@@ -241,12 +274,35 @@ namespace WindowsGame1
         {
 #if DEBUG
             KeyboardState keyboard = Keyboard.GetState();
-            if (keyboard.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R))
+            GamePadState gamePad = GamePad.GetState(PlayerIndex.One);
+            if (keyboard.IsKeyDown(Keys.R) && _oldKeyboardState.IsKeyUp(Keys.R) || gamePad.DPad.Down == ButtonState.Pressed && _oldGamePadState.DPad.Down == ButtonState.Released)
                 Game1.ResetEnemies();
-            if (keyboard.IsKeyDown(Keys.N))
+            if (keyboard.IsKeyDown(Keys.N) || gamePad.Buttons.X == ButtonState.Pressed)
                 _weapons[_weaponIndex].AddAmmo(1);
             if (keyboard.IsKeyDown(Keys.G) && _oldKeyboardState.IsKeyUp(Keys.G))
                 Hit(15);
+            if (keyboard.IsKeyDown(Keys.L) && _oldKeyboardState.IsKeyUp(Keys.L))
+                Game1.DiscordComponent.UpdateUserActivity("Playing campaign", "(No)");
+
+            if (keyboard.IsKeyDown(Keys.F7) && _oldKeyboardState.IsKeyUp(Keys.F7))
+            {
+                using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
+                {
+
+                    openFileDialog.InitialDirectory = string.Format("{0}\\Content\\maps\\", Directory.GetCurrentDirectory());
+                    openFileDialog.Filter = "map files (*.cdm)|*.cdm|All files (*.*)|*.*";
+                    openFileDialog.FilterIndex = 2;
+                    openFileDialog.RestoreDirectory = true;
+
+                    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        //Get the path of specified file
+                        string filePath = openFileDialog.FileName;
+                        Game1.MapComponent.LoadFromPath(filePath);
+                    }
+                }
+            }
+
 #endif
         }
 
