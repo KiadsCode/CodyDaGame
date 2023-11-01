@@ -23,7 +23,6 @@ namespace WindowsGame1
         public static UserInterface UserInterface;
         public static DiscordComponent DiscordComponent;
         public static Map MapComponent;
-        public static FrameRateComponent FpsComponent;
         public static Camera GamePlayCamera = new Camera();
         public const int GlobalAnimationCoolDown = 2;
         public static bool CameraShakeAvailable = true;
@@ -146,9 +145,6 @@ namespace WindowsGame1
 
             MapComponent = new Map(this);
             Components.Add(MapComponent);
-
-            FpsComponent = new FrameRateComponent(this);
-            Components.Add(FpsComponent);
 
             ResetEnemies();
             foreach (IGameComponent item in Components)

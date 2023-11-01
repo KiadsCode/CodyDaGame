@@ -153,7 +153,6 @@
     <Compile Include="Player.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Engine\Collision\Circle.cs" />
-    <Compile Include="Engine\FrameRateComponent.cs" />
     <Compile Include="Engine\Map\MapComponent.cs" />
     <Compile Include="Engine\Map\MapData.cs" />
     <Compile Include="Engine\Map\Block.cs" />
@@ -171,7 +170,7 @@
     <Compile Include="Weapons\AssaultRifle.cs" />
     <Compile Include="Weapons\Magnum.cs" />
     <Compile Include="Weapons\Weapon.cs" />
-    <Compile Include="Weapons\MagnumSilencer.cs" />
+    <Compile Include="Weapons\MagnumSuppressed.cs" />
     <Compile Include="Weapons\Smg.cs" />
   </ItemGroup>
   <ItemGroup>

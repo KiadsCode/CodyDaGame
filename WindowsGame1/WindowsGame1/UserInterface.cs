@@ -14,7 +14,6 @@ namespace WindowsGame1
         public UserInterface(Game game)
             : base(game)
         {
-            // TODO: Construct any child components here
             DrawOrder = 2;
             _uiCamera = new Camera()
             {
@@ -43,12 +42,12 @@ namespace WindowsGame1
 
             _spriteBatch.DrawString(Game1.SpriteFonts["hudfont"], Game1.Player.GetCurrentWeapon().AmmoCount.ToString(), new Vector2(100, 425), Color.White);
 
-            #if DEBUG
-                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Dev Build", Vector2.Zero, Color.White);
-            #endif
-            #if PROTOTYPE
-            _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Pre Alpha Build--\nBlocks collision Test:", Vector2.Zero, Color.White);
-            #endif
+#if DEBUG
+                _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Dev Build--\nDumb AI Test:", Vector2.Zero, Color.White);
+#endif
+#if PROTOTYPE
+            _spriteBatch.DrawString(Game1.SpriteFonts["vcr"], "Pre Alpha Build--\nMore weapons test:", Vector2.Zero, Color.White);
+#endif
             _spriteBatch.End();
 
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);

@@ -45,9 +45,12 @@ namespace WindowsGame1.Engine.Map
             {
                 _health -= damage;
                 _alive = _health > 0;
-                if (_alive == false)
-                    Game1.SoundEffects["explode"].Play();
             }
+        }
+
+        public bool IsHitableBlock()
+        {
+            return _type != 0 && _type != 3;
         }
 
         public Rectangle GetCollider()

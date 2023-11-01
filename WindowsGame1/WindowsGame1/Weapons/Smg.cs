@@ -12,14 +12,14 @@ namespace WindowsGame1.Weapons
         public override void Initialize()
         {
             InitializeWeaponProperties(
-                102,
-                3,
+                75,
+                4,
                 3,
                 true,
                 "smgShot",
                 "smgShot",
-                new WeaponOffset(new Vector2(130, 30), new Vector2(20, -36)),
-                new WeaponOffset(new Vector2(24, -35), new Vector2(16, -35))
+                new WeaponOffset(new Vector2(145, 36), new Vector2(20, -36)),
+                new WeaponOffset(new Vector2(24, -40), new Vector2(16, -40))
                 );
             base.Initialize();
         }

@@ -119,15 +119,6 @@
       <Time>2023-06-11T17:04:21.5254299+07:00</Time>
     </Item>
     <Item>
-      <Source>sounds\magnum-1.mp3</Source>
-      <Name>sounds\magnumShot</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumShot.xnb</Output>
-      <Time>2023-06-10T12:18:22.1500912+07:00</Time>
-    </Item>
-    <Item>
       <Source>sounds\WeaponNoAmmo.wav</Source>
       <Name>sounds\weaponNoAmmo</Name>
       <Importer>WavImporter</Importer>
@@ -244,6 +235,60 @@
       <Options>None</Options>
       <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\explode1.xnb</Output>
       <Time>2023-07-11T18:52:10.3024755+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\PistolSilencerShoot.png</Source>
+      <Name>images\PistolSilencerShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\PistolSilencerShoot.xnb</Output>
+      <Time>2023-09-21T15:42:16.7501273+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\SmgShoot.png</Source>
+      <Name>images\smgShoot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\images\smgShoot.xnb</Output>
+      <Time>2023-09-21T17:21:27.1204609+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\magnum-1.mp3</Source>
+      <Name>sounds\magnumShotUNSU</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumShotUNSU.xnb</Output>
+      <Time>2023-06-10T12:18:22.1500912+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\free-sound-1674847857.mp3</Source>
+      <Name>sounds\magnumShot</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumShot.xnb</Output>
+      <Time>2023-09-21T16:03:02.824102+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\PistolSilencerShot.mp3</Source>
+      <Name>sounds\magnumSilencerShot</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\magnumSilencerShot.xnb</Output>
+      <Time>2023-09-21T16:03:02.8231043+07:00</Time>
+    </Item>
+    <Item>
+      <Source>sounds\H5_SMG_1.mp3</Source>
+      <Name>sounds\smgShoot</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Visual Studio 2010 Ultimate\Projects\WindowsGame1\WindowsGame1\WindowsGame1\bin\x86\Prototype\Content\sounds\smgShoot.xnb</Output>
+      <Time>2023-09-21T17:23:59.7856918+07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

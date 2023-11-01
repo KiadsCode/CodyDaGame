@@ -1,11 +1,12 @@
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Diagnostics;
+using System.IO;
 using WindowsGame1.Engine.Collision;
 using WindowsGame1.Engine.Map;
 using WindowsGame1.Weapons;
-using System.IO;
 
 namespace WindowsGame1
 {
@@ -83,7 +84,7 @@ namespace WindowsGame1
             : base(game)
         {
             DrawOrder = 1;
-            _weapons = new Weapon[] { new MagnumSilencer(game), new Smg(game) };
+            _weapons = new Weapon[] { new Smg(game), new Magnum(game) };
         }
 
         protected override void LoadContent()
@@ -164,9 +165,9 @@ namespace WindowsGame1
                 {
                     _dashStrength = new Vector2(DashPower * (int)_dashDirection, 0);
                     ShakeCamera(0.15f * (float)_dashDirection);
-                    Game1.SoundEffects["dashsound"].Play();
                     _dashCooldown = DashCooldown;
                     _regenerationCooldown = 180;
+                    Game1.SoundEffects["dashsound"].Play();
                 }
             }
 
@@ -183,7 +184,10 @@ namespace WindowsGame1
             Rectangle trueCollider = GetCollider();
 
             if (gamePad.Buttons.Back == ButtonState.Pressed)
-                Game.Exit(); 
+                Game.Exit();
+
+            if (keyboard.IsKeyDown(Keys.F7) && _oldKeyboardState.IsKeyUp(Keys.F7))
+                LoadCustomMap();
 
             if (keyboard.IsKeyDown(Keys.D) && keyboard.IsKeyUp(Keys.A) || gamePad.ThumbSticks.Left.X > 0)
             {
@@ -249,7 +253,15 @@ namespace WindowsGame1
 
             _oldKeyboardState = keyboard;
             _oldGamePadState = gamePad;
+
+            _weapons[_weaponIndex].Rotation = MathHelper.Lerp(_weapons[_weaponIndex].Rotation, 0.0f, 0.05f);
+
             base.Update(gameTime);
+        }
+
+        private void PerformPunch()
+        {
+            _weapons[_weaponIndex].Rotation = 1f;
         }
 
         private void RotatePlayer()
@@ -281,29 +293,27 @@ namespace WindowsGame1
                 _weapons[_weaponIndex].AddAmmo(1);
             if (keyboard.IsKeyDown(Keys.G) && _oldKeyboardState.IsKeyUp(Keys.G))
                 Hit(15);
-            if (keyboard.IsKeyDown(Keys.L) && _oldKeyboardState.IsKeyUp(Keys.L))
-                Game1.DiscordComponent.UpdateUserActivity("Playing campaign", "(No)");
+#endif
+        }
 
-            if (keyboard.IsKeyDown(Keys.F7) && _oldKeyboardState.IsKeyUp(Keys.F7))
+        private static void LoadCustomMap()
+        {
+            using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
             {
-                using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
+
+                openFileDialog.InitialDirectory = string.Format("{0}\\Content\\maps\\", Directory.GetCurrentDirectory());
+                openFileDialog.Filter = "Cody Map files (*.cdm)|*.cdm";
+                openFileDialog.Title = "Выберика себе карту";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-
-                    openFileDialog.InitialDirectory = string.Format("{0}\\Content\\maps\\", Directory.GetCurrentDirectory());
-                    openFileDialog.Filter = "map files (*.cdm)|*.cdm|All files (*.*)|*.*";
-                    openFileDialog.FilterIndex = 2;
-                    openFileDialog.RestoreDirectory = true;
-
-                    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        //Get the path of specified file
-                        string filePath = openFileDialog.FileName;
-                        Game1.MapComponent.LoadFromPath(filePath);
-                    }
+                    //Get the path of specified file
+                    string filePath = openFileDialog.FileName;
+                    Game1.MapComponent.LoadFromPath(filePath);
                 }
             }
-
-#endif
         }
 
         private void SwitchWeapon()
@@ -321,7 +331,7 @@ namespace WindowsGame1
 
                 _spriteBatch.Draw(Game1.Textures[AssetsName], _position, Game1.SpriteSheets[AssetsName][_frame], Color.White, 0, new Vector2(Game1.SpriteSheets[AssetsName][_frame].Width / 2, Game1.SpriteSheets[AssetsName][_frame].Height / 2), 1, _spriteEffect, 0);
                 _weapons[_weaponIndex].Draw(_spriteBatch);
-                
+
                 //_spriteBatch.Draw(Game1.Textures["1x1"], GetCollider(), Color.Red);
 
                 _spriteBatch.End();
